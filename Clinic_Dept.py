@@ -8,7 +8,7 @@ Created on Sat Sep 19 14:26:36 2020
 from linebot import (LineBotApi, WebhookHandler, exceptions)
 from linebot.exceptions import (InvalidSignatureError)
 from linebot.models import *
-line_bot_api = LineBotApi('4ACf5tCKLKNRqvTCK6xo/j5i8su4xz8m7A4ZqU58ANNORVfrv7Da5BgPPs+9DVZQa6cROfZirs7NGmEgUp302oFohyPHnfF95InEln766mBRObcJT8xpI+d5dWsGSiXHyeYeE71c0VAmfOGXYR1ApQdB04t89/1O/w1cDnyilFU=')
+line_bot_api = LineBotApi('Q65IelWgsFiWzJL7srk++OKbP70q9OzqVJXAY3+iXKOOb/E0tVZ2+xJxgrfdN0jbmYmcz2SQEQIFugb0WMmSYkbO3odUAhS/NSVKdmCK60lk6omrnKTWc34zfSjAwoHVCf9ebnmd62zjdFyfE9EWfwdB04t89/1O/w1cDnyilFU=')
 #line_bot_api = LineBotApi('edFUkQybndZah161EJSfCNEhnNbwrS92WB2W8w+/uSZJiI+U+u5Ylfw7rBT32kplCQ3DahfN3+LdayHLDOMwJ0QSMZkHxRhdUo6A3Im9+R1xq3XuvB65DdH9dLUPSuiimB7cJA9G6qxdt+s8ZpjThQdB04t89/1O/w1cDnyilFU=')
 
 

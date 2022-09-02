@@ -51,11 +51,11 @@ import Rig_Option
 app = Flask(__name__)
 
 # Channel Access Token
-line_bot_api = LineBotApi('F5q3+1gA8yhn4TUrhfxY2g4izN0zK4fOc/6aHB8IDAuMMyXkRSLNKWeQctDL0LfUZtesB89QjNqoQeOSXKeOTfzxiX9wwn//CmU+1s1Ifa6avkuS4v7C7Zfbbov/i7H7Xm9vnz8b3Xrb9JN+okpL6gdB04t89/1O/w1cDnyilFU=')
+line_bot_api = LineBotApi('Q65IelWgsFiWzJL7srk++OKbP70q9OzqVJXAY3+iXKOOb/E0tVZ2+xJxgrfdN0jbmYmcz2SQEQIFugb0WMmSYkbO3odUAhS/NSVKdmCK60lk6omrnKTWc34zfSjAwoHVCf9ebnmd62zjdFyfE9EWfwdB04t89/1O/w1cDnyilFU=')
 # Channel Secret
-handler = WebhookHandler('e1fb7aa93b285f73c7fd0b0329b26678')
+handler = WebhookHandler('cbaa8a628d50ff5c58ea16bad479bfa1')
 # LINE BOT 開發者預設ID，以接收啟動信息 
-line_bot_api.push_message('U1a447107797cfe0a2e2c8443df084569', TextSendMessage(text='OK,I am DR. Echo! May I help you? ｡^‿^｡'))
+line_bot_api.push_message('Ub719dea14f41f0e9ac414e5b95435c9c', TextSendMessage(text='OK,I am DR. Echo! May I help you? ｡^‿^｡'))
 
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
@@ -134,7 +134,7 @@ def handle_postback(event):
             types = data[3]
 
             message = Search_address(float(lan), float(long), types)
-            # print(message)
+            print(message)
             line_bot_api.push_message(uid,message)
 
 @handler.add(MessageEvent, message=TextMessage)
@@ -163,7 +163,7 @@ def handle_message(event):
         if user_message.find('取消翻譯') != -1 or user_message.find('Quit') != -1 or user_message.find('quit') != -1:
             lang ='中'
             KMSH_UserDB_Con.dis_trmode(uid,lang)
-            Response_info = '好的!取消翻譯功能!'
+            Response_info = 'OK. Translation Function terminated!'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(Response_info))
        # user_message='我要翻譯韓語' user_message='我要波斯語翻譯'    #user_message='翻譯馬來西亞語' user_message='翻譯羅馬尼亞語'
         #----------------------變更翻譯語言種類--------------------------    
@@ -179,7 +179,7 @@ def handle_message(event):
                                 
                 if  new_lang_code != pre_lang_code:
                     KMSH_UserDB_Con.set_trmode(uid,new_lang_code) 
-                    Response_info='(1)好的，切換['+new_lang_name +'翻譯]!\n(2)若要停止翻譯，請下[取消翻譯功能]、[Quit]、[quit]的文字命令!!\n(3)翻譯語音的合成要等耐心一下喔!大約需要6~8秒左右!'
+                    Response_info='(1)OK. Switch to ['+new_lang_name +'翻譯]!\n(2)To stop the translation, please type the text command: [Cancel translation function], [Quit], or [quit]!\n(3)The speech translation takes about 6-8 seconds! Please be patient.'
                     line_bot_api.reply_message(event.reply_token,TextSendMessage(Response_info))
                 else:
                     Response_info='(1)您已經在['+new_lang_name+'翻譯]的功能中!\n(2)若要停止翻譯，請下[取消翻譯功能]、[Quit]、[quit]的文字命令!!\n(3)翻譯語音的合成要等耐心一下喔!大約需要6~8秒左右!'
@@ -190,26 +190,26 @@ def handle_message(event):
                 line_bot_api.reply_message(event.reply_token,TextSendMessage(Response_info))
          #----------------------設定翻譯語言種類--------------------------
         # user_message='我要翻譯韓語' user_message='我要馬來西亞語翻譯'    #user_message='翻譯亞語'       
-        elif user_message.find('外語選單') != -1: 
+        elif user_message.find('外語選單') != -1:
             lang_menu = TemplateSendMessage(
-                alt_text='外語翻譯選單',
+                alt_text='Foreign language translation menu',
                 template=CarouselTemplate(
                     columns=[
                         CarouselColumn(
                             thumbnail_image_url='https://lh3.googleusercontent.com/FtA-p01ZiAP1eA-8WOTFAlU793Q4smX7OgGxjD0svgWKR-3nmiIwADfRqSezAQSPlaHOHP0FHayqz2Hu2i1zlazGeC0GuPgqwq_-IZhb7pNRgv8Nk-ePBe7GSTdPcr-zsS9mHaG6NQ=w600',
-                            title='外語翻譯選單-1/10',
-                            text='亞洲語系翻譯(1/4)',
+                            title='Foreign language translation menu-1/10',
+                            text='Asian language translation(1/4)',
                             actions=[
                                 MessageTemplateAction(
-                                    label='英(美)語',
+                                    label='English',
                                     text='翻譯英語'
                                 ),
                                 MessageTemplateAction(
-                                    label='日語',
+                                    label='Japanese',
                                     text='翻譯日語'
                                 ),
                                 MessageTemplateAction(
-                                    label='韓語',
+                                    label='Korean',
                                     text='翻譯韓語'
                                 )                            
                             ]
@@ -217,19 +217,19 @@ def handle_message(event):
     # -----------------------------------------------------------------------------
                         CarouselColumn(
                             thumbnail_image_url='https://lh3.googleusercontent.com/FKSRSGWwJttJXxWqGVQh1NK_B6Y0coj7zjIsfBw2zCLOXqyCoJdEc3p1QfrslhUH_vLJAch9duWwh_4qSJ2rQzYzMXVGqIp9RKmfdUVLTtNhhKwAtBDUw_m6hJthgssXy8mqYY9BvQ=w600',
-                            title='外語翻譯選單-2/10',
-                            text='亞洲語系翻譯(2/4)',
+                            title='Foreign language translation menu-2/10',
+                            text='Asian language translation(2/4)',
                             actions=[
                                 MessageTemplateAction(
-                                    label='越南語',
+                                    label='Vietnamese',
                                     text='翻譯越南語'
                                 ),
                                 MessageTemplateAction(
-                                    label='馬來西亞語',
+                                    label='Malaysian',
                                     text='翻譯馬來西亞語'
                                 ),
                                 MessageTemplateAction(
-                                    label='印尼語',
+                                    label='Indonesian',
                                     text='翻譯印尼語'
                                 )                            
                             ]
@@ -237,19 +237,19 @@ def handle_message(event):
     #------------------------------------------------------------------------------                    
                         CarouselColumn(
                             thumbnail_image_url='https://lh3.googleusercontent.com/ii9yNKlFFIHKc8JS3Lp0xJJbbFVZxF-IIXAo9UgaUXBMzgmu2eR57Q8yfroKg084mRd-ooBLjvxwBeZRVdYRIDNqm6gW2bDOyUFVT6zD9h4GOu0lMjux1QfeGiUblBNs1Lahwffjjw=w600',
-                            title='外語翻譯選單-3/10',
-                            text='亞洲語系翻譯(3/4)',
+                            title='Foreign language translation menu-3/10',
+                            text='Asian language translation(3/4)',
                             actions=[
                                 MessageTemplateAction(
-                                    label='泰語',
+                                    label='Thai',
                                     text='翻譯泰語'
                                 ),
                                 MessageTemplateAction(
-                                    label='印度語',
+                                    label='Hindi',
                                     text='翻譯印度語'
                                 ),
                                 MessageTemplateAction(
-                                    label='阿拉伯語',
+                                    label='Arab',
                                     text='翻譯阿拉伯語'
                                 )                            
                             ]
@@ -257,19 +257,19 @@ def handle_message(event):
     # -----------------------------------------------------------------------------
                         CarouselColumn(
                             thumbnail_image_url='https://lh3.googleusercontent.com/Dg7oaQ7DqWg9VKjb0jlIJIoEeWXsxMnj5LBUU_Go3kyf2M64LYYjtKW03hTiibqyvhX-GO-ApNWR0M_4htARzptPyNBKvreuxwaP_4yt2xsc_-jD7mbd-J_vXBDjxDV4leZLMuujeQ=w600',
-                            title='外語翻譯選單-4/10',
-                            text='歐亞洲語系翻譯(4/4)',
+                            title='Foreign language translation menu-4/10',
+                            text='歐Asian language translation(4/4)',
                             actions=[
                                 MessageTemplateAction(
-                                    label='希伯來語(以色列)',
+                                    label='Hebrew (Israel)',
                                     text='翻譯希伯來語'
                                 ),
                                 MessageTemplateAction(
-                                    label='土耳其語',
+                                    label='Turkish',
                                     text='翻譯土耳其語'
                                 ),
                                 MessageTemplateAction(
-                                    label='保加利亞語',
+                                    label='Bulgarian',
                                     text='翻譯保加利亞語'
                                 )                            
                             ]
@@ -277,19 +277,19 @@ def handle_message(event):
     #------------------------------------------------------------------------------                    
                         CarouselColumn(
                             thumbnail_image_url='https://lh3.googleusercontent.com/lYYC3KONJ-r8MPuO6NlR92JQocBqioz6d4L_IJMfcWVuZ54IT4jnOGrRB4Nbfm-B-eolh5ijP7tuJCIdPprH3VGf_6zcuDyWrWJGqS5maLxdyyRLaOy3TcKoOlDc3mSE3g599ANr2Q=w600',
-                            title='外語翻譯選單-5/10',
-                            text='歐洲語系翻譯(1/6)',
+                            title='Foreign language translation menu-5/10',
+                            text='European language translation(1/6)',
                             actions=[
                                 MessageTemplateAction(
-                                    label='英(美)語',
+                                    label='English',
                                     text='翻譯英語'
                                 ),
                                 MessageTemplateAction(
-                                    label='法語',
+                                    label='French',
                                     text='翻譯法語'
                                 ),
                                 MessageTemplateAction(
-                                    label='德語',
+                                    label='German',
                                     text='翻譯德語'
                                 )                            
                             ]
@@ -297,19 +297,19 @@ def handle_message(event):
     #-----------------------------------------------------------------------------------                    
                         CarouselColumn(
                             thumbnail_image_url='https://lh3.googleusercontent.com/EboLBmHXVpQlk3hrpdHZlLEzjnGGAvjuCGsI32si5ekjX-t6CcUWe6AX1o0lElKvj4pfKLINxMKDzaWFFjliDHMzgTk35M1ShkRlT0S8CrUctVVAHC51Y0zFgVlmRMcdp_U4lC8kgw=w600',
-                            title='外語翻譯選單-6/10',
-                            text='歐洲語系翻譯(2/6)',
+                            title='Foreign language translation menu-6/10',
+                            text='European language translation(2/6)',
                             actions=[
                                 MessageTemplateAction(
-                                    label='西班牙語',
+                                    label='Spanish',
                                     text='翻譯西班牙語'
                                 ),
                                 MessageTemplateAction(
-                                    label='葡萄牙語',
+                                    label='Portuguese',
                                     text='翻譯葡萄牙語'
                                 ),
                                 MessageTemplateAction(
-                                    label='葡萄牙語(巴西)',
+                                    label='Brazilian',
                                     text='翻譯巴西語'
                                 )                            
                             ]
@@ -317,19 +317,19 @@ def handle_message(event):
     #------------------------------------------------------------------------------
                         CarouselColumn(
                             thumbnail_image_url='https://lh3.googleusercontent.com/_rparADUnbJJnpb65H7ayhR1AGVm3NWNbDBZiyjnnzxZP6kgvWe4Umhbom9n4ux9IqLJw4f11FTNuSqiWEtGgUvCpPKztQPqWHVPdRJw3QuLfT7eDEo6oFNZCRES9HCeVESSGC3Dpw=w600',
-                            title='外語翻譯選單-7/10',
-                            text='歐洲語系翻譯(3/6)',
+                            title='Foreign language translation menu-7/10',
+                            text='European language translation(3/6)',
                             actions=[
                                 MessageTemplateAction(
-                                    label='義大利語',
+                                    label='Italian',
+                                    text='翻譯Greek'
+                                ),
+                                MessageTemplateAction(
+                                    label='Greek',
                                     text='翻譯希臘語'
                                 ),
                                 MessageTemplateAction(
-                                    label='希臘語',
-                                    text='翻譯希臘語'
-                                ),
-                                MessageTemplateAction(
-                                    label='匈牙利語',
+                                    label='Hungarian',
                                     text='翻譯匈牙利語'
                                 )                            
                             ]
@@ -338,19 +338,19 @@ def handle_message(event):
     #------------------------------------------------------------------------------                    
                         CarouselColumn(
                             thumbnail_image_url='https://lh3.googleusercontent.com/5ihsLofivptsynCymdVOH4mVJSU_BVkkCV3G9FuDVRbB-94f11bxTYiWJ9FinDcFkuHZbfgaPbdDEwaprd9eLsoZWV6i6er0zklomk035VXUwke0mCjtK2Ljm6pBd_1YRx3vkvvQ_A=w600',
-                            title='外語翻譯選單-8/10',
-                            text='歐洲語系翻譯(4/6)',
+                            title='Foreign language translation menu-8/10',
+                            text='European language translation(4/6)',
                             actions=[
                                 MessageTemplateAction(
-                                    label='波蘭語',
+                                    label='Polish',
                                     text='翻譯波蘭語'
                                 ),
                                 MessageTemplateAction(
-                                    label='丹麥語',
+                                    label='Danish',
                                     text='翻譯丹麥語'
                                 ),
                                 MessageTemplateAction(
-                                    label='荷蘭語',
+                                    label='Dutch',
                                     text='翻譯荷蘭語'
                                 )                            
                             ]
@@ -358,19 +358,19 @@ def handle_message(event):
     #------------------------------------------------------------------------------                    
                         CarouselColumn(
                             thumbnail_image_url='https://lh3.googleusercontent.com/-2lYj7IxjNABSjyP-YhmFakXpuWuI-1sxc6Bms2vH2qHXcLs6nM_OTW9caDURCwcteDgP72jn-naFj074hyP5GvLXWXRekkPwAZDfIaNyP76QjOz7a96i90WrZy93BExUFEOOQxjgA=w600',
-                            title='外語翻譯選單-9/10',
-                            text='歐洲語系翻譯(5/6)',
+                            title='Foreign language translation menu-9/10',
+                            text='European language translation(5/6)',
                             actions=[
                                 MessageTemplateAction(
-                                    label='瑞典語',
+                                    label='Swedish',
                                     text='翻譯瑞典語'
                                 ),
                                 MessageTemplateAction(
-                                    label='芬蘭語',
+                                    label='Finnish',
                                     text='翻譯芬蘭語'
                                 ),
                                 MessageTemplateAction(
-                                    label='挪威語',
+                                    label='Norwegian',
                                     text='翻譯挪威語'
                                 )                            
                             ]
@@ -378,19 +378,19 @@ def handle_message(event):
     #------------------------------------------------------------------------------                    
                         CarouselColumn(
                             thumbnail_image_url='https://lh3.googleusercontent.com/ixYCUmAcRByFRZtPSmljEScE3rFss1BqiflLUUX4UHqHwOTlIuzREIG3WzH2D-ltmWgxUnnaKL7urxLOngzoPcXxmiUKrDBOiTMJtnybrsJQuifwY84YitAFrA1RfOoQ-V5x0GRTFw=w600',
-                            title='外語翻譯選單-10/10',
-                            text='歐洲語系翻譯(6/6)',
+                            title='Foreign language translation menu-10/10',
+                            text='European language translation(6/6)',
                             actions=[
                                 MessageTemplateAction(
-                                    label='俄羅斯語',
+                                    label='Russian',
                                     text='翻譯俄羅斯語'
                                 ),
                                 MessageTemplateAction(
-                                    label='捷克語',
+                                    label='Czech',
                                     text='翻譯捷克語'
                                 ),
                                 MessageTemplateAction(
-                                    label='羅馬尼亞語',
+                                    label='Romanian',
                                     text='翻譯羅馬尼亞語'
                                 )                            
                             ]
@@ -544,12 +544,12 @@ def handle_message(event):
     elif work_mode[0] == 'D' :
         
         line_mark='\n-------------------------\n'   
-        if user_message.find('取消看診') != -1 or user_message.find('離開看診') != -1:
+        if user_message.find('Cancel a visit') != -1 or user_message.find('Leave the Medical Department') != -1:
             lang ='中'
             KMSH_UserDB_Con.dis_trmode(uid,lang)  #取消看診模式，回到一般查詢模式(門診掛號功能)  
-            Response_info='好的，離開[看診建議]功能!'
+            Response_info='OK, leave the [Medical Department Recommendation] function!'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(Response_info))
-        elif  user_message.find('看診建議') != -1:
+        elif  user_message.find('Medical Department Recommendation') != -1:
             lang ='中'
             KMSH_UserDB_Con.set_trmode_d(uid,lang)
             
@@ -566,16 +566,16 @@ def handle_message(event):
                         text='請選擇您現在有不舒服狀況的身體部位，如下選單:',
                         actions=[
                             MessageTemplateAction(
-                                label='頭部',
-                                text='頭部症狀'
+                                label='Head',
+                                text='Head Symptoms'
                             ),
                             MessageTemplateAction(
-                                label='頸部',
-                                text='頸部症狀'
+                                label='Neck',
+                                text='Neck Symptoms'
                             ),
                             MessageTemplateAction(
-                                label='手腳四肢',
-                                text='四肢症狀'
+                                label='Limbs',
+                                text='Symptoms of Limbs'
                             )                            
                         ]
                     ),
@@ -607,42 +607,42 @@ def handle_message(event):
             )
         
             imagemap_message = ImagemapSendMessage(
-            base_url='https://lh3.googleusercontent.com/K8i-XYfunqUI_vPB1kM3piCg1G0oh3aOEMo34zOg3v0a1pUDqKfllfQiP1bIPCaWhmxb8J0sb3daOBnmjY-g7pyEqSOvqhXL9oSz3CzAiF_CLBNYCrFtNgbo6zSL1UUxylwStMWShg=w1040#',
-            alt_text=' imagemap',
-            base_size=BaseSize(height=1040, width=1040),
+            base_url='https://lh3.googleusercontent.com/fife/AAbDypBazBR0kg4Tel-CQRPRBA1_hhhNn2UVre-ZO4I7qG_LazITOAjR4kNF5tvmuFNZTA6M7ZDE_MLy7W8L9XT44Vr9jP5n59iB8xa5EQJ83hzLRUvLipqB_gbsQaE2YFv3lE50-stWQVB3Swg9j9u7g7HFoq6VnjFZwNZDdvEvYyL_iUCvxBbDtPxxEwa_oKWvA-AaWiOTh8AVQy5ahTLi8Jeu-iZOQGH6SUZb2qgdYT32Y9MiEhK6QvVAmm7FZVi610Rz0ApKAOUVKqS4u3t7WwpkDR8N-g5LPSTcixtEAwyusWv7DK3ERW7rooo1mqM1AGCYCwiug4kBoijH8VGAZ4XpcluChWneZ351l0-NoOpQDcBxpKft4n6IA62zBe6S0AjadCqFID4OR10YfaBBWdNFGdWsZ8Rlf3RjuOmM7bHlaiqdOhJGJ4SttqWC9k1F6SYhMVlvxt8culAJwTnEozZoM_Zx6bdM31icpHB-4YHWYHsKRfkLlokqFCV1yaiOc4WvmmX4_IjnyCQ-NtyIaU9CQwNzkt5k0Y9CNtXDfjq8vByXmwc-Zn9-dIhSqoGqazs5SuvWdE5zX4xELfq45sCGoSjK8MYvb1017pkxSEivvza0swcqe17CX86hYGfpcQNXdZa5uGT4_g5vbRsci-QCgX7HLlJekYdwQTiuhqh1aFpg4IZHi6pgJFZKlK5z8d8vKxc_K8IQR7DXdOF3vomMEiBoeMPbZ8zQfB2iTxhsFBQ10yChsBjlsk1PUMzqQi2OorloOqVgr3IhVgKIdLxcgqqC0oeY_ktHmcTC7TgoP8n_zOhH8vYlbeCD9nVoQfrdULtiYaqsn8CJkoSpyUG3mk1h7i0R-dxlAWJ0ojF-aIFeU9zpjzgrLoo_AIKgxwMonFSH1f_HmBN_y2gZnlU__WY92iZ5j5WdB-drkkFSlnkKAQdxHWyyfuaBlp18iTuRTnLD_MrJuirF3-hWgtcsJJMzPOceqt_Lhobxk2FuI_Ux0Ad8HrdJ-dyHndW0lm8qKwpKrhA4IjHmr6n9RtXWIY04kGCP5ASHtXH3zmRsbI5msCRLK-2w5XEBUHWBS78Hdbn5G_jxzgu-KZgE5hg19bTtA4m8otv0_h2oBBJELV7JAJEvAUh0RNVkwJe_vaCoFY2Mezjdj20-1NKITejzXWJjq2g3ItH2vToCzD8D-PobTDFvgfnH6cwCzzepjDbYbUCthiuE-4DLMmpu-y30a3NJfM49Uf2iiR435NCKqZ8l6Ek6zTYiC_mp1ucF9fLgVon5hA2i7IeX29jy-zd96hqyuIt5dTtp-ZBSmz7_JX-rxivHVl62nAsI6W6UC7XAnHNfSD4OYeDV=w1600-h1600?authuser=0',
+            alt_text='imagemap',
+            base_size=BaseSize(height=1040, width=1200),
                actions=[
                 MessageImagemapAction (
-                    text='頭部症狀',
+                    text='Head Symptoms',
                     area=ImagemapArea(
                         x=0, y=0, width=520, height=320
                     )
                 ),
                 MessageImagemapAction (
-                    text='頸部症狀',
+                    text='Neck Symptoms',
                     area=ImagemapArea(
                         x=0, y=320, width=520, height=260
                     )
                 ),
                 MessageImagemapAction (
-                    text='四肢症狀',
+                    text='Symptoms of Limbs',
                     area=ImagemapArea(
                         x=0, y=580, width=520, height=460
                     )
                 ),
                 MessageImagemapAction(
-                    text='全身皮膚症狀',
+                    text='General Symptoms',
                     area=ImagemapArea(
                         x=520, y=0, width=520, height=320
                     )
                 ),
                 MessageImagemapAction(
-                    text='上腹部症狀',
+                    text='Upper Abdomen Symptoms',
                     area=ImagemapArea(
                         x=520, y=320, width=520, height=320
                     )
                 ),
                 MessageImagemapAction(
-                    text='下腹部症狀',
+                    text='Lower Abdomen Symptoms',
                     area=ImagemapArea(
                         x=520, y=640, width=520, height=400
                     )
@@ -654,7 +654,7 @@ def handle_message(event):
             line_bot_api.push_message(uid, imagemap_message)
                                                 
 ############################### 頭部症狀判斷 #######################################
-        elif  user_message.find('頭部症狀') != -1:
+        elif  user_message.find('Head Symptoms') != -1:
             Symptom.Head(uid) 
             
         elif  user_message == 'H1' :
@@ -691,12 +691,12 @@ def handle_message(event):
                             text='掛號骨科B'
                             ),
                         MessageTemplateAction(
-                            label= '繼續使用看診建議',
-                            text= '看診建議'
+                            label= 'Continue',
+                            text= 'Medical Department Recommendation'
                             ),
                         MessageTemplateAction(
-                            label= '離開看診建議',
-                            text= '離開看診'
+                            label= 'Leave consultation advice',
+                            text= 'Leave the Medical Department'
                             ),
                         
                     ]
@@ -806,12 +806,12 @@ def handle_message(event):
                             text='掛號牙科'
                             ),
                         MessageTemplateAction(
-                            label= '繼續使用看診建議',
+                            label= 'Continue',
                             text= '看診建議'
                             ),
                         MessageTemplateAction(
-                            label= '離開看診建議',
-                            text= '離開看診'
+                            label= 'Leave consultation advice',
+                            text= 'Leave the Medical Department'
                             ),
                         
                     ]
@@ -913,7 +913,7 @@ def handle_message(event):
             KMSH_UserDB_Con.dis_trmode(uid,lang)  #取消看診模式，回到一般查詢模式(門診掛號功能)
                                   
 ########################## 頸部症狀 ############################################
-        elif  user_message.find('頸部症狀') != -1:
+        elif  user_message.find('Neck Symptoms') != -1:
             Symptom.Neck(uid)
             
         elif  user_message == 'N1' : 
@@ -946,12 +946,12 @@ def handle_message(event):
                             text='掛號骨科B'
                             ),
                         MessageTemplateAction(
-                            label= '繼續使用看診建議',
-                            text= '看診建議'
+                            label= 'Continue',
+                            text= 'Medical Department Recommendation'
                             ),
                         MessageTemplateAction(
-                            label= '離開看診建議',
-                            text= '離開看診'
+                            label= 'Leave consultation advice',
+                            text= 'Leave the Medical Department'
                             ),
                         
                     ]
@@ -971,15 +971,15 @@ def handle_message(event):
             lang ='中'
             KMSH_UserDB_Con.dis_trmode(uid,lang)  #取消看診模式，回到一般查詢模式(門診掛號功能)            
 ################################# 上腹部症狀 ###################################                  
-        elif  user_message.find('上腹部症狀') != -1:
+        elif  user_message.find('Upper Abdomen Symptoms') != -1:
             sym_message = TemplateSendMessage(
-                alt_text='上腹部症狀',
+                alt_text='Upper Abdomen Symptoms',
                 template=CarouselTemplate(
                     columns=[
     # -----------------------------------------------------------------------------                    
                         CarouselColumn(                            
-                            title='上腹部症狀選單-1/2',
-                            text='請選擇您目前有的身體症狀群，如下:',
+                            title='Upper Abdomen Symptoms Menu-1/2',
+                            text='Please select the symptoms you currently have, such as :  ',
                             actions=[
                                 MessageTemplateAction(
                                     label='上腹部疼痛',
@@ -997,8 +997,8 @@ def handle_message(event):
                         ),
     # -----------------------------------------------------------------------------                    
                         CarouselColumn(                            
-                            title='上腹部症狀選單-2/2',
-                            text='請選擇您目前有的身體症狀群，如下:',
+                            title='Upper Abdomen Symptoms Menu-2/2',
+                            text='Please select the symptoms you currently have, such as :  ',
                             actions=[
                                 MessageTemplateAction(
                                     label='身體部位部位變形/疼痛/無力',
@@ -1029,7 +1029,7 @@ def handle_message(event):
                 alt_text='上腹部症狀-2',
                 template=ButtonsTemplate(                                                
                         title='其他部位症狀選單',
-                        text='請選擇您目前有的身體症狀群，如下:',
+                        text='Please select the symptoms you currently have, such as :  ',
                         actions=[
                             MessageTemplateAction(
                                 label='黃疸',
@@ -1058,7 +1058,7 @@ def handle_message(event):
                 alt_text='上腹部症狀-3',
                 template=ButtonsTemplate(                                                
                         title='其他部位症狀選單',
-                        text='請選擇您目前有的身體症狀群，如下:',
+                        text='Please select the symptoms you currently have, such as :  ',
                         actions=[
                             MessageTemplateAction(
                                 label='發燒/咳嗽有痰',
@@ -1156,15 +1156,15 @@ def handle_message(event):
             lang ='中'
             KMSH_UserDB_Con.dis_trmode(uid,lang)  #取消看診模式，回到一般查詢模式(門診掛號功能)               
 ############################### 下腹部症狀 ###################################
-        elif  user_message.find('下腹部症狀') != -1:
+        elif  user_message.find('Lower Abdomen Symptoms') != -1:
             sym_message = TemplateSendMessage(
-                alt_text='下腹部症狀',
+                alt_text='Lower Abdomen Symptoms',
                 template=CarouselTemplate(
                     columns=[
     # -----------------------------------------------------------------------------                    
                         CarouselColumn(                            
-                            title='下腹部症狀選單-1/2',
-                            text='請選擇您目前有的身體症狀群，如下:',
+                            title='Lower Abdomen Symptoms Menu-1/2',
+                            text='Please select the symptoms you currently have, such as :  ',
                             actions=[
                                 MessageTemplateAction(
                                     label='下腹部疼痛/腹瀉/便秘',
@@ -1182,8 +1182,8 @@ def handle_message(event):
                         ),
     # -----------------------------------------------------------------------------                    
                         CarouselColumn(                            
-                            title='上腹部症狀選單-2/2',
-                            text='請選擇您目前有的身體症狀群，如下:',
+                            title='Lower Abdomen Symptoms Menu-2/2',
+                            text='Please select the symptoms you currently have, such as :  ',
                             actions=[
                                 MessageTemplateAction(
                                     label='腰痛下背痛/血尿/頻尿/小便疼痛',
@@ -1261,12 +1261,12 @@ def handle_message(event):
             KMSH_UserDB_Con.dis_trmode(uid,lang)  #取消看診模式，回到一般查詢模式(門診掛號功能)              
 
 ############################### 四肢症狀 ###################################
-        elif  user_message.find('四肢症狀') != -1:
+        elif  user_message.find('Symptoms of Limbs') != -1:
             sym_message = TemplateSendMessage(
-                alt_text='四肢症狀',
+                alt_text='Symptoms of Limbs',
                 template = ButtonsTemplate(                                               
-                            title='四肢症狀選單',
-                            text='請選擇您目前有的身體症狀群，如下:',
+                            title='Symptoms of Limbs Menu',
+                            text='Please select the symptoms you currently have, such as :  ',
                             actions=[
                                 MessageTemplateAction(
                                     label='小腿水腫/腳腫',
@@ -1296,9 +1296,9 @@ def handle_message(event):
             responese_info='先前已選四肢症狀:[小腿水腫/腳腫]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(responese_info))            
             sym_message = TemplateSendMessage(
-                alt_text='四肢症狀-2',
+                alt_text='Symptoms of Limbs-2',
                 template = ButtonsTemplate(                                               
-                            title='四肢症狀-2選單',
+                            title='Symptoms of Limbs-2選單',
                             text='請選擇您其他的身體症狀群，如下:',
                             actions=[
                                 MessageTemplateAction(
@@ -1349,12 +1349,12 @@ def handle_message(event):
                             text='掛號復健科'
                             ),
                         MessageTemplateAction(
-                            label= '繼續使用看診建議',
-                            text= '看診建議'
+                            label= 'Continue',
+                            text= 'Medical Department Recommendation'
                             ),
                         MessageTemplateAction(
-                            label= '離開看診建議',
-                            text= '離開看診'
+                            label= 'Leave consultation advice',
+                            text= 'Leave the Medical Department'
                             )
                         
                     ]
@@ -1402,15 +1402,15 @@ def handle_message(event):
             lang ='中'
             KMSH_UserDB_Con.dis_trmode(uid,lang)  #取消看診模式，回到一般查詢模式(門診掛號功能)               
 ##############################################################################
-        elif  user_message.find('全身皮膚症狀') != -1:
+        elif  user_message.find('General Symptoms') != -1:
             sym_message = TemplateSendMessage(
-                alt_text='全身症狀',
+                alt_text='General Symptoms',
                 template=CarouselTemplate(
                     columns=[
     # -----------------------------------------------------------------------------                    
                         CarouselColumn(                            
-                            title='全身姓症狀選單-1/3',
-                            text='請選擇您目前有的身體症狀群，如下:',
+                            title='General Symptoms Menu-1/3',
+                            text='Please select the symptoms you currently have, such as :  ',
                             actions=[
                                 MessageTemplateAction(
                                     label='發燒',
@@ -1428,8 +1428,8 @@ def handle_message(event):
                         ),
  # -----------------------------------------------------------------------------                    
                         CarouselColumn(                            
-                            title='全身姓症狀選單-2/3',
-                            text='請選擇您目前有的身體症狀群，如下:',
+                            title='General Symptoms Menu-2/3',
+                            text='Please select the symptoms you currently have, such as :  ',
                             actions=[
                                 MessageTemplateAction(
                                     label='失眠/焦慮/恐慌/生氣',
@@ -1447,8 +1447,8 @@ def handle_message(event):
                         ),
  # -----------------------------------------------------------------------------                    
                         CarouselColumn(                            
-                            title='全身姓症狀選單-3/3',
-                            text='請選擇您目前有的身體症狀群，如下:',
+                            title='General Symptoms Menu-3/3',
+                            text='Please select the symptoms you currently have, such as :  ',
                             actions=[
                                 MessageTemplateAction(
                                     label='血壓高/暈倒',
@@ -1643,7 +1643,7 @@ def handle_message(event):
                 line_bot_api.reply_message(event.reply_token,TextSendMessage(Response_info))
                 Confirm_Dig.Ask(uid)                
         else:
-            Response_info='無法了解您所選的的症狀，您目前處於[看診建議]功能中!，繼續使用或是離開此功能?'
+            Response_info='Unable to understand the symptoms you selected, you are currently in the [Medical Department Recommendation] function! Continue to use or leave this function?'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(Response_info))
             Confirm_Dig.Ask(uid)
                     
@@ -1652,28 +1652,28 @@ def handle_message(event):
 ############################# 導航附近醫院模式 #############################
     if work_mode[0] == 'M':
         # -----------------------# 取消導航功能-----------------------
-        if user_message.find('離開搜尋') != -1 or user_message.find('取消搜尋') != -1 or user_message.find('Quit') != -1 or user_message.find('quit') != -1:
+        if user_message.find('Leave Search') != -1 or user_message.find('取消搜尋') != -1 or user_message.find('Quit') != -1 or user_message.find('quit') != -1:
             lang = '中'
             KMSH_UserDB_Con.dis_trmode(uid, lang)
-            Response_info = '好的!取消醫院搜尋功能!'
+            Response_info = 'OK! Cancel [Hospital Search] function. You can use other functions!'
             line_bot_api.reply_message(event.reply_token, TextSendMessage(Response_info))
         # user_message='我要翻譯韓語' user_message='我要波斯語翻譯'    #user_message='翻譯馬來西亞語' user_message='翻譯羅馬尼亞語'
         # ----------------------變更翻譯語言種類--------------------------
-        elif user_message.find("醫院搜尋") != -1:
+        elif user_message.find("Hospital Search") != -1:
             Response_info = Quick_text()
             line_bot_api.reply_message(event.reply_token, Response_info)
 
-        elif user_message.find('我的醫院') != -1:
+        elif user_message.find('My Hospital') != -1:
             my_Hospital = KMSH_UserDB_Con.read_my_Hospital(uid)
             Response_info = reply_Hospital(my_Hospital)
             line_bot_api.reply_message(event.reply_token, Response_info)
 
         elif user_message.find('07') != -1:
-            Response_info = '請點擊號碼撥號'
+            Response_info = 'Please click the number to dial'
             line_bot_api.reply_message(event.reply_token, TextSendMessage(Response_info))
 
         else:
-            Response_info = '您目前處於[醫院搜尋]功能中!，繼續使用或是離開此功能?'
+            Response_info = 'You are currently in the [Hospital Search] function! Continue to use or exit this function?'
             line_bot_api.reply_message(event.reply_token, TextSendMessage(Response_info))
             Confirm_Dig.Sit(uid)
 
@@ -1681,20 +1681,70 @@ def handle_message(event):
 
 #################################### 一般查詢狀態 ##############################
 ##     user_message='離開看診'    
-    elif user_message.find('離開看診') !=-1:
+    elif user_message.find('Leave the Medical Department') !=-1:
         
-        Response_info='您已經離開[看診建議]的功能!可以使用其他功能喔!'
+        Response_info='You have left the function of [diagnosis advice]! You can use other functions!'
         line_bot_api.reply_message(event.reply_token,TextSendMessage(Response_info))
-    elif user_message.find('取消看診') !=-1:
+    elif user_message.find('Cancel a visit') !=-1:
         
-        Response_info='您已經離開[看診建議]的功能!可以使用其他功能喔!'
+        Response_info='You have left the function of [diagnosis advice]! You can use other functions!'
         line_bot_api.reply_message(event.reply_token,TextSendMessage(Response_info))    
-         
-    elif user_message.find('看診建議') !=-1:
+    # test template
+    elif user_message.find('test') !=-1:
+        lang ='中'
+        KMSH_UserDB_Con.set_trmode_d(uid,lang)
+        imagemap_message = ImagemapSendMessage(
+            base_url='https://lh3.googleusercontent.com/fife/AAbDypBdwSzPAUuHfyPdv15h1Yw443oyAEBhc15P6Bibe58dF5ZlQlA5kiSQ2OujuTysX6NdThqVMuRU5GvdnSpxWnIZVJbrIPqFW1_BXwMCR346-FOO6IgnhlZwtl-4gcXQq81jz1-o9M2oS6iKVKLwvWH7BWm7fPcTZGTbrYLjoyz9wsoQnWd6T5hFCxo35JqoFb-w4zoMJ0yMaIvN36QXsKALgHUKJv-AggX1gaOS67DWLfnPUIJrILi3UcpgQIFcHAjE0WTCPRSLVAOpPwVfGfw_tM5lPtCczSzX7-7W5Xabj_I4gQ7pw_MrAq3BjkgSl63GErzTvPBu15n6FYeuJXl4pM2thR-qVaq_a7ZEHPH2PGFQcMAFrhYPUTxp914wZqVj4KkitADRjbD0fU8WBblyj03NOzx8ekpOkeCiVKsEAiHXxaHJPjJcebMdlC9BHLy9kYbz107QvT12ZMMCXOuvJRAE2CrLJMyb2o9Ps2hfP8f7nAxB9E5qjwnfUi0AcLHXT_5dSmRg2YzRDIy9pIcc8xH9Lgd03ucMAGaQ0KyTHZ1ewTZkzV0OLo_Z6n7hUm915EbNxbz8f39v7aSGrVPX7lfQJt50Cm1p7WFwBoaJdpvkoGNkaZwIGx2O9C5sdQ7Ye7csh_Ubfqlm_DJn_1mWX02pcyfY5IfQzHk6BuwPqlMj3Jv7HedV9AvdQbswLTn-qfXsa4CSa7u5U1ZfxxAptcDyQHJkxPQQ5uocgLKaqFde0u4L_bKtqXqHcai0_eGDICeHO5YQEoG6WM4-rseWCLanrMpyvBl0zTJrUH8Hyf4VpTkrvcMhQWSBmmPZ0KK1VJIi8uEjSMoRgjnMWATMnMfgHJT1LYyuAtjTZdw7Hl8Z_zzh_2B0b-h5lqpld7YzwRLP3_alYo6_Z8LVB6gEW0c3RXCZlq_IQ9kPX5m8RR9aFuaVNg61x-JTdIsb5v-nyVacPXgOdBv4w2mrv-UjzrwXpwT9fd8ox3C0xp_kctMj_jgd2GSx3VosE7qRCCRPq1dlQUsu4djbACa1y2XqtPAuBqFZ4ZvPEPzWXB_akd5gdkzlJf4AqGc2gs6zuV5dFtA8XCCDRstAYmp0VK6CRp7Mj3CMISB_F5D4EqzLvIe3780vF6u5-FjNgG4h6qTGgRVzVVrReIJRaiQVparY4B0Ee6qx4YzqUtBcclJY5jIvpCpueEHJKWRSwgw3m_81z83gwGRTx_0Hdm-cKs-NMoR_1ZD5X8wbMDzApNDTfwGO61dMb7fQTgDcuQYEzFkeSHFXjEjmrSkP8c9SyJO4Jecgb3wMZUxIBNBcEMVRpOtb3w_B-D-fzyEJULDeQEf2PXVFoLK4AkJQ=w1600-h1600?authuser=0',
+            alt_text='imagemap',
+            base_size=BaseSize(height=1040, width=1200),
+            actions=[
+                MessageImagemapAction(
+                    text='Head Symptoms',
+                    area=ImagemapArea(
+                        x=0, y=0, width=520, height=320
+                    )
+                ),
+                MessageImagemapAction(
+                    text='Neck Symptoms',
+                    area=ImagemapArea(
+                        x=0, y=320, width=520, height=260
+                    )
+                ),
+                MessageImagemapAction(
+                    text='Symptoms of Limbs',
+                    area=ImagemapArea(
+                        x=0, y=580, width=520, height=460
+                    )
+                ),
+                MessageImagemapAction(
+                    text='General Symptoms',
+                    area=ImagemapArea(
+                        x=520, y=0, width=520, height=320
+                    )
+                ),
+                MessageImagemapAction(
+                    text='Upper Abdomen Symptoms',
+                    area=ImagemapArea(
+                        x=520, y=320, width=520, height=320
+                    )
+                ),
+                MessageImagemapAction(
+                    text='Lower Abdomen Symptoms',
+                    area=ImagemapArea(
+                        x=520, y=640, width=520, height=400
+                    )
+                ),
+
+            ]
+        )
+        # line_bot_api.push_message(uid, diagnosis_message)
+        line_bot_api.push_message(uid, imagemap_message)
+        return 0
+    elif user_message.find('Medical Department Recommendation') !=-1:
         lang ='中'
         KMSH_UserDB_Con.set_trmode_d(uid,lang)
         
-        Response_info='您已經進入[看診建議]的功能!\n若要離開此功能，請您輸入[離開看診建議]或是[取消看診建議]的文字命令喔!'
+        Response_info='You have entered the function of [Consultation Suggestion]!\nTo leave this function, please enter the text command of [Leave Consultation Advice] or [Cancel Consultation Advice]!'
         line_bot_api.reply_message(event.reply_token,TextSendMessage(Response_info))
         
         diagnosis_message = TemplateSendMessage(
@@ -1710,16 +1760,16 @@ def handle_message(event):
                         text='請選擇您現在有不舒服狀況的身體部位，如下選單:',
                         actions=[
                             MessageTemplateAction(
-                                label='頭部',
-                                text='頭部症狀'
+                                label='Head',
+                                text='Head Symptoms'
                             ),
                             MessageTemplateAction(
-                                label='頸部',
-                                text='頸部症狀'
+                                label='Neck',
+                                text='Neck Symptoms'
                             ),
                             MessageTemplateAction(
-                                label='手腳四肢',
-                                text='四肢症狀'
+                                label='Limbs',
+                                text='Symptoms of Limbs'
                             )                            
                         ]
                     ),
@@ -1749,45 +1799,45 @@ def handle_message(event):
                 ]
             )
         )
-        
-        
+
+
         imagemap_message = ImagemapSendMessage(
-            base_url='https://lh3.googleusercontent.com/K8i-XYfunqUI_vPB1kM3piCg1G0oh3aOEMo34zOg3v0a1pUDqKfllfQiP1bIPCaWhmxb8J0sb3daOBnmjY-g7pyEqSOvqhXL9oSz3CzAiF_CLBNYCrFtNgbo6zSL1UUxylwStMWShg=w1040#',
-            alt_text=' imagemap',
-            base_size=BaseSize(height=1040, width=1040),
+            base_url='https://lh3.googleusercontent.com/fife/AAbDypBazBR0kg4Tel-CQRPRBA1_hhhNn2UVre-ZO4I7qG_LazITOAjR4kNF5tvmuFNZTA6M7ZDE_MLy7W8L9XT44Vr9jP5n59iB8xa5EQJ83hzLRUvLipqB_gbsQaE2YFv3lE50-stWQVB3Swg9j9u7g7HFoq6VnjFZwNZDdvEvYyL_iUCvxBbDtPxxEwa_oKWvA-AaWiOTh8AVQy5ahTLi8Jeu-iZOQGH6SUZb2qgdYT32Y9MiEhK6QvVAmm7FZVi610Rz0ApKAOUVKqS4u3t7WwpkDR8N-g5LPSTcixtEAwyusWv7DK3ERW7rooo1mqM1AGCYCwiug4kBoijH8VGAZ4XpcluChWneZ351l0-NoOpQDcBxpKft4n6IA62zBe6S0AjadCqFID4OR10YfaBBWdNFGdWsZ8Rlf3RjuOmM7bHlaiqdOhJGJ4SttqWC9k1F6SYhMVlvxt8culAJwTnEozZoM_Zx6bdM31icpHB-4YHWYHsKRfkLlokqFCV1yaiOc4WvmmX4_IjnyCQ-NtyIaU9CQwNzkt5k0Y9CNtXDfjq8vByXmwc-Zn9-dIhSqoGqazs5SuvWdE5zX4xELfq45sCGoSjK8MYvb1017pkxSEivvza0swcqe17CX86hYGfpcQNXdZa5uGT4_g5vbRsci-QCgX7HLlJekYdwQTiuhqh1aFpg4IZHi6pgJFZKlK5z8d8vKxc_K8IQR7DXdOF3vomMEiBoeMPbZ8zQfB2iTxhsFBQ10yChsBjlsk1PUMzqQi2OorloOqVgr3IhVgKIdLxcgqqC0oeY_ktHmcTC7TgoP8n_zOhH8vYlbeCD9nVoQfrdULtiYaqsn8CJkoSpyUG3mk1h7i0R-dxlAWJ0ojF-aIFeU9zpjzgrLoo_AIKgxwMonFSH1f_HmBN_y2gZnlU__WY92iZ5j5WdB-drkkFSlnkKAQdxHWyyfuaBlp18iTuRTnLD_MrJuirF3-hWgtcsJJMzPOceqt_Lhobxk2FuI_Ux0Ad8HrdJ-dyHndW0lm8qKwpKrhA4IjHmr6n9RtXWIY04kGCP5ASHtXH3zmRsbI5msCRLK-2w5XEBUHWBS78Hdbn5G_jxzgu-KZgE5hg19bTtA4m8otv0_h2oBBJELV7JAJEvAUh0RNVkwJe_vaCoFY2Mezjdj20-1NKITejzXWJjq2g3ItH2vToCzD8D-PobTDFvgfnH6cwCzzepjDbYbUCthiuE-4DLMmpu-y30a3NJfM49Uf2iiR435NCKqZ8l6Ek6zTYiC_mp1ucF9fLgVon5hA2i7IeX29jy-zd96hqyuIt5dTtp-ZBSmz7_JX-rxivHVl62nAsI6W6UC7XAnHNfSD4OYeDV=w1600-h1600?authuser=0',
+            alt_text='imagemap',
+            base_size=BaseSize(height=1040, width=1200),
                actions=[
                 MessageImagemapAction (
-                    text='頭部症狀',
+                    text='Head Symptoms',
                     area=ImagemapArea(
                         x=0, y=0, width=520, height=320
                     )
                 ),
                 MessageImagemapAction (
-                    text='頸部症狀',
+                    text='Neck Symptoms',
                     area=ImagemapArea(
                         x=0, y=320, width=520, height=260
                     )
                 ),
                 MessageImagemapAction (
-                    text='四肢症狀',
+                    text='Symptoms of Limbs',
                     area=ImagemapArea(
                         x=0, y=580, width=520, height=460
                     )
                 ),
                 MessageImagemapAction(
-                    text='全身皮膚症狀',
+                    text='General Symptoms',
                     area=ImagemapArea(
                         x=520, y=0, width=520, height=320
                     )
                 ),
                 MessageImagemapAction(
-                    text='上腹部症狀',
+                    text='Upper Abdomen Symptoms',
                     area=ImagemapArea(
                         x=520, y=320, width=520, height=320
                     )
                 ),
                 MessageImagemapAction(
-                    text='下腹部症狀',
+                    text='Lower Abdomen Symptoms',
                     area=ImagemapArea(
                         x=520, y=640, width=520, height=400
                     )
@@ -1802,21 +1852,21 @@ def handle_message(event):
   # user_message='我要翻譯韓語' user_message='我要馬來西亞語翻譯'    #user_message='翻譯亞語'       
     elif user_message.find('外語選單') != -1:
 #         lang_menu = TemplateSendMessage(
-#             alt_text='外語翻譯選單',
+#             alt_text='Foreign language translation menu',
 #             template=CarouselTemplate(
 #                 columns=[
 #                     CarouselColumn(
 # #                        thumbnail_image_url='  ',
-#                         title='外語翻譯選單-1/4',
-#                         text='亞洲語系翻譯',
+#                         title='Foreign language translation menu-1/4',
+#                         text='Asian language translation',
 #                         actions=[
 #                             MessageTemplateAction(
-#                                 label='英(美)語',
+#                                 label='English',
 #                                 text='翻譯英語'
 #                             ),
 #                             MessageTemplateAction(
-#                                 label='日語',
-#                                 text='翻譯日語'
+#                                 label='Japanese',
+#                                 text='翻譯Japanese'
 #                             ),
 #                             MessageTemplateAction(
 #                                 label='韓語',
@@ -1827,8 +1877,8 @@ def handle_message(event):
 # #------------------------------------------------------------------------------                    
 #                     CarouselColumn(
 # #                        thumbnail_image_url='   ',
-#                         title='外語翻譯選單-2/4',
-#                         text='歐洲語系翻譯',
+#                         title='Foreign language translation menu-2/4',
+#                         text='European language translation',
 #                         actions=[
 #                             MessageTemplateAction(
 #                                 label='西班牙語',
@@ -1848,8 +1898,8 @@ def handle_message(event):
 # # -----------------------------------------------------------------------------
 #                     CarouselColumn(
 # #                        thumbnail_image_url='   ',
-#                         title='外語翻譯選單-3/4',
-#                         text='亞洲語系翻譯',
+#                         title='Foreign language translation menu-3/4',
+#                         text='Asian language translation',
 #                         actions=[
 #                             MessageTemplateAction(
 #                                 label='越南語',
@@ -1868,8 +1918,8 @@ def handle_message(event):
 # #------------------------------------------------------------------------------                    
 #                     CarouselColumn(
 # #                        thumbnail_image_url='   ',
-#                         title='外語翻譯選單-4/4',
-#                         text='亞洲語系翻譯',
+#                         title='Foreign language translation menu-4/4',
+#                         text='Asian language translation',
 #                         actions=[
 #                             MessageTemplateAction(
 #                                 label='泰語',
@@ -1890,24 +1940,24 @@ def handle_message(event):
 #             )
 #         )         # 結束MESSAGE-TemplateSendMessage  
         lang_menu = TemplateSendMessage(
-            alt_text='外語翻譯選單',
+            alt_text='Foreign language translation menu',
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
                         thumbnail_image_url='https://lh3.googleusercontent.com/FtA-p01ZiAP1eA-8WOTFAlU793Q4smX7OgGxjD0svgWKR-3nmiIwADfRqSezAQSPlaHOHP0FHayqz2Hu2i1zlazGeC0GuPgqwq_-IZhb7pNRgv8Nk-ePBe7GSTdPcr-zsS9mHaG6NQ=w600',
-                        title='外語翻譯選單-1/10',
-                        text='亞洲語系翻譯(1/4)',
+                        title='Foreign language translation menu-1/10',
+                        text='Asian language translation(1/4)',
                         actions=[
                             MessageTemplateAction(
-                                label='英(美)語',
+                                label='English',
                                 text='翻譯英語'
                             ),
                             MessageTemplateAction(
-                                label='日語',
+                                label='Japanese',
                                 text='翻譯日語'
                             ),
                             MessageTemplateAction(
-                                label='韓語',
+                                label='Korean',
                                 text='翻譯韓語'
                             )                            
                         ]
@@ -1915,19 +1965,19 @@ def handle_message(event):
 # -----------------------------------------------------------------------------
                     CarouselColumn(
                         thumbnail_image_url='https://lh3.googleusercontent.com/FKSRSGWwJttJXxWqGVQh1NK_B6Y0coj7zjIsfBw2zCLOXqyCoJdEc3p1QfrslhUH_vLJAch9duWwh_4qSJ2rQzYzMXVGqIp9RKmfdUVLTtNhhKwAtBDUw_m6hJthgssXy8mqYY9BvQ=w600',
-                        title='外語翻譯選單-2/10',
-                        text='亞洲語系翻譯(2/4)',
+                        title='Foreign language translation menu-2/10',
+                        text='Asian language translation(2/4)',
                         actions=[
                             MessageTemplateAction(
-                                label='越南語',
+                                label='Vietnamese',
                                 text='翻譯越南語'
                             ),
                             MessageTemplateAction(
-                                label='馬來西亞語',
+                                label='Malaysian',
                                 text='翻譯馬來西亞語'
                             ),
                             MessageTemplateAction(
-                                label='印尼語',
+                                label='Indonesian',
                                 text='翻譯印尼語'
                             )                            
                         ]
@@ -1935,19 +1985,19 @@ def handle_message(event):
 #------------------------------------------------------------------------------                    
                     CarouselColumn(
                         thumbnail_image_url='https://lh3.googleusercontent.com/ii9yNKlFFIHKc8JS3Lp0xJJbbFVZxF-IIXAo9UgaUXBMzgmu2eR57Q8yfroKg084mRd-ooBLjvxwBeZRVdYRIDNqm6gW2bDOyUFVT6zD9h4GOu0lMjux1QfeGiUblBNs1Lahwffjjw=w6000',
-                        title='外語翻譯選單-3/10',
-                        text='亞洲語系翻譯(3/4)',
+                        title='Foreign language translation menu-3/10',
+                        text='Asian language translation(3/4)',
                         actions=[
                             MessageTemplateAction(
-                                label='泰語',
+                                label='Thai',
                                 text='翻譯泰語'
                             ),
                             MessageTemplateAction(
-                                label='印度語',
+                                label='Hindi',
                                 text='翻譯印度語'
                             ),
                             MessageTemplateAction(
-                                label='阿拉伯語',
+                                label='Arab',
                                 text='翻譯阿拉伯語'
                             )                            
                         ]
@@ -1955,19 +2005,19 @@ def handle_message(event):
 # -----------------------------------------------------------------------------
                     CarouselColumn(
                         thumbnail_image_url='https://lh3.googleusercontent.com/Dg7oaQ7DqWg9VKjb0jlIJIoEeWXsxMnj5LBUU_Go3kyf2M64LYYjtKW03hTiibqyvhX-GO-ApNWR0M_4htARzptPyNBKvreuxwaP_4yt2xsc_-jD7mbd-J_vXBDjxDV4leZLMuujeQ=w600',
-                        title='外語翻譯選單-4/10',
-                        text='亞洲語系翻譯(4/4)',
+                        title='Foreign language translation menu-4/10',
+                        text='Asian language translation(4/4)',
                         actions=[
                             MessageTemplateAction(
-                                label='希伯來語(以色列)',
+                                label='Hebrew (Israel)',
                                 text='翻譯希伯來語'
                             ),
                             MessageTemplateAction(
-                                label='土耳其語',
+                                label='Turkish',
                                 text='翻譯土耳其語'
                             ),
                             MessageTemplateAction(
-                                label='保加利亞',
+                                label='Bulgarian',
                                 text='翻譯保加利亞'
                             )                            
                         ]
@@ -1975,19 +2025,19 @@ def handle_message(event):
 #------------------------------------------------------------------------------                    
                     CarouselColumn(
                         thumbnail_image_url='https://lh3.googleusercontent.com/lYYC3KONJ-r8MPuO6NlR92JQocBqioz6d4L_IJMfcWVuZ54IT4jnOGrRB4Nbfm-B-eolh5ijP7tuJCIdPprH3VGf_6zcuDyWrWJGqS5maLxdyyRLaOy3TcKoOlDc3mSE3g599ANr2Q=w600',
-                        title='外語翻譯選單-5/10',
-                        text='歐洲語系翻譯(1/6)',
+                        title='Foreign language translation menu-5/10',
+                        text='European language translation(1/6)',
                         actions=[
                             MessageTemplateAction(
-                                label='英(美)語',
+                                label='English',
                                 text='翻譯英語'
                             ),
                             MessageTemplateAction(
-                                label='法語',
+                                label='French',
                                 text='翻譯法語'
                             ),
                             MessageTemplateAction(
-                                label='德語',
+                                label='German',
                                 text='翻譯德語'
                             )                            
                         ]
@@ -1995,19 +2045,19 @@ def handle_message(event):
 #-----------------------------------------------------------------------------------                    
                     CarouselColumn(
                         thumbnail_image_url='https://lh3.googleusercontent.com/EboLBmHXVpQlk3hrpdHZlLEzjnGGAvjuCGsI32si5ekjX-t6CcUWe6AX1o0lElKvj4pfKLINxMKDzaWFFjliDHMzgTk35M1ShkRlT0S8CrUctVVAHC51Y0zFgVlmRMcdp_U4lC8kgw=w600',
-                        title='外語翻譯選單-6/10',
-                        text='歐洲語系翻譯(2/6)',
+                        title='Foreign language translation menu-6/10',
+                        text='European language translation(2/6)',
                         actions=[
                             MessageTemplateAction(
-                                label='西班牙語',
+                                label='Spanish',
                                 text='翻譯西班牙語'
                             ),
                             MessageTemplateAction(
-                                label='葡萄牙語',
+                                label='Portuguese',
                                 text='翻譯葡萄牙語'
                             ),
                             MessageTemplateAction(
-                                label='葡萄牙語(巴西)',
+                                label='Brazilian',
                                 text='翻譯巴西語'
                             )                            
                         ]
@@ -2015,19 +2065,19 @@ def handle_message(event):
 #------------------------------------------------------------------------------
                     CarouselColumn(
                         thumbnail_image_url='https://lh3.googleusercontent.com/_rparADUnbJJnpb65H7ayhR1AGVm3NWNbDBZiyjnnzxZP6kgvWe4Umhbom9n4ux9IqLJw4f11FTNuSqiWEtGgUvCpPKztQPqWHVPdRJw3QuLfT7eDEo6oFNZCRES9HCeVESSGC3Dpw=w600',
-                        title='外語翻譯選單-7/10',
-                        text='歐洲語系翻譯(3/6)',
+                        title='Foreign language translation menu-7/10',
+                        text='European language translation(3/6)',
                         actions=[
                             MessageTemplateAction(
-                                label='義大利語',
+                                label='Italian',
                                 text='翻譯義大利語'
                             ),
                             MessageTemplateAction(
-                                label='希臘語',
+                                label='Greek',
                                 text='翻譯希臘語'
                             ),
                             MessageTemplateAction(
-                                label='匈牙利語',
+                                label='Hungarian',
                                 text='翻譯匈牙利語'
                             )                            
                         ]
@@ -2036,19 +2086,19 @@ def handle_message(event):
 #------------------------------------------------------------------------------                    
                     CarouselColumn(
                         thumbnail_image_url='https://lh3.googleusercontent.com/5ihsLofivptsynCymdVOH4mVJSU_BVkkCV3G9FuDVRbB-94f11bxTYiWJ9FinDcFkuHZbfgaPbdDEwaprd9eLsoZWV6i6er0zklomk035VXUwke0mCjtK2Ljm6pBd_1YRx3vkvvQ_A=w600',
-                        title='外語翻譯選單-8/10',
-                        text='歐洲語系翻譯(4/6)',
+                        title='Foreign language translation menu-8/10',
+                        text='European language translation(4/6)',
                         actions=[
                             MessageTemplateAction(
-                                label='波蘭語',
+                                label='Polish',
                                 text='翻譯波蘭語'
                             ),
                             MessageTemplateAction(
-                                label='丹麥語',
+                                label='Danish',
                                 text='翻譯丹麥語'
                             ),
                             MessageTemplateAction(
-                                label='荷蘭語',
+                                label='Dutch',
                                 text='翻譯荷蘭語'
                             )                            
                         ]
@@ -2056,19 +2106,19 @@ def handle_message(event):
 #------------------------------------------------------------------------------                    
                     CarouselColumn(
                         thumbnail_image_url='https://lh3.googleusercontent.com/-2lYj7IxjNABSjyP-YhmFakXpuWuI-1sxc6Bms2vH2qHXcLs6nM_OTW9caDURCwcteDgP72jn-naFj074hyP5GvLXWXRekkPwAZDfIaNyP76QjOz7a96i90WrZy93BExUFEOOQxjgA=w600',
-                        title='外語翻譯選單-9/10',
-                        text='歐洲語系翻譯(5/6)',
+                        title='Foreign language translation menu-9/10',
+                        text='European language translation(5/6)',
                         actions=[
                             MessageTemplateAction(
-                                label='瑞典語',
+                                label='Swedish',
                                 text='翻譯瑞典語'
                             ),
                             MessageTemplateAction(
-                                label='芬蘭語',
+                                label='Finnish',
                                 text='翻譯芬蘭語'
                             ),
                             MessageTemplateAction(
-                                label='挪威語',
+                                label='Norwegian',
                                 text='翻譯挪威語'
                             )                            
                         ]
@@ -2076,19 +2126,19 @@ def handle_message(event):
 #------------------------------------------------------------------------------                    
                     CarouselColumn(
                         thumbnail_image_url='https://lh3.googleusercontent.com/ixYCUmAcRByFRZtPSmljEScE3rFss1BqiflLUUX4UHqHwOTlIuzREIG3WzH2D-ltmWgxUnnaKL7urxLOngzoPcXxmiUKrDBOiTMJtnybrsJQuifwY84YitAFrA1RfOoQ-V5x0GRTFw=w600',
-                        title='外語翻譯選單-10/10',
-                        text='歐洲語系翻譯(6/6)',
+                        title='Foreign language translation menu-10/10',
+                        text='European language translation(6/6)',
                         actions=[
                             MessageTemplateAction(
-                                label='俄羅斯語',
+                                label='Russian',
                                 text='翻譯俄羅斯語'
                             ),
                             MessageTemplateAction(
-                                label='捷克語',
+                                label='Czech',
                                 text='翻譯捷克語'
                             ),
                             MessageTemplateAction(
-                                label='羅馬尼亞語',
+                                label='Romanian',
                                 text='翻譯羅馬尼亞語'
                             )                            
                         ]
@@ -2225,17 +2275,17 @@ def handle_message(event):
         return 0
 
 ############################## 使用者設定導航模式 ######################
-    elif user_message.find('醫院搜尋') != -1:
+    elif user_message.find('Hospital Search') != -1:
         lang = '中'
         KMSH_UserDB_Con.set_trmode_m(uid, lang)
 
-        Response_info = '您已經進入[醫院搜尋]的功能!\n若要離開此功能，請您輸入[離開醫院搜尋]或是[取消醫院搜尋]的文字命令喔!'
+        Response_info = 'You have entered the [Hospital Search] function!\nTo leave this function, please enter the text command [Leave Hospital Search] or [Cancel Hospital Search]!'
         line_bot_api.reply_message(event.reply_token, TextSendMessage(Response_info))
         Response_Quick = Quick_text()
         line_bot_api.push_message(uid, Response_Quick)
 
 ############################## 顯示使用者所儲存的醫院 ######################
-    elif user_message.find('我的醫院') != -1:
+    elif user_message.find('My Hospital') != -1:
         my_Hospital = KMSH_UserDB_Con.read_my_Hospital(uid)
         Response_info = reply_Hospital(my_Hospital)
 
@@ -2264,16 +2314,17 @@ def handle_message(event):
                     message)
 
 ############################## 連結到衛生福利部疾病管制署 ######################
-    elif user_message.find('台灣疫情') != -1:
+    elif user_message.find('Taiwan Epidemic News') != -1:
+
         Flu_message = TemplateSendMessage(
             alt_text='台灣疫情',
             template=ButtonsTemplate(
-                title='衛生福利部疾病管制署網站',
-                text='查詢疫情近況和相關公告，請按以下連結查詢',
+                title="Taiwan'"+ "s" + " Epidemic News",
+                text='View the status of the epidemic and related announcements',
                 actions=[
                     URITemplateAction(
-                        label='進入網站',
-                        uri="https://www.cdc.gov.tw/"
+                        label='Enter the website',
+                        uri="https://www.cdc.gov.tw/En"
                     )
                 ]
             )
@@ -5188,27 +5239,19 @@ def handle_message(event):
 ##############################################################################
 #                       衛教資訊(文件/影片)選單入口
 ##############################################################################
-    elif user_message.find('衛教資訊選單') != -1:        
+    elif user_message.find('Health Education Information') != -1:
         care_message = TemplateSendMessage(
             alt_text='衛教資訊選單',
             template = ButtonsTemplate(
                 image_aspect_ratio='square',
                 thumbnail_image_url='https://lh3.googleusercontent.com/shB0u3JxHzJ2zbrIovXBLmy6gMq17epXkwMDPcBVf7olTuUSEA2JC0BdzUeiIJ-MxckF6mv4ZEkHhgjClivp0EBV-fNKXLDIquJOwzr_buhOW6XzEPc7ktrLrRPhbW1Uf_M08boveQ=w400',
-                title='小港醫院衛教資訊選單',
-                text= '各科別衛教資訊，請按以下連結查詢',
-                actions= [
-                    MessageTemplateAction(
-                        label= '文件衛教資訊',
-                        text= '文件衛教'
-                        ),
-                    MessageTemplateAction(
-                        label= '影片衛教資訊',
-                        text= '影片衛教'
-                        ),
-                    MessageTemplateAction(
-                        label= '特殊藥品使用衛教影片',
-                        text= '特殊藥品使用衛教'
-                        )
+                title='Anti Covid-19 Training for Caregivers',
+                text= 'Please click the link below for enquiry',
+                actions=[
+                    URITemplateAction(
+                        label='Enter the website',
+                        uri="https://www.kmsh.org.tw/hygr_Edu/nCOVID-2019/%E9%99%A2%E5%85%A7%E7%85%A7%E9%A1%A7%E6%9C%8D%E5%8B%99%E5%93%A1%E7%9B%B8%E9%97%9C%E6%AD%A6%E6%BC%A2%E8%82%BA%E7%82%8E%E6%95%99%E8%82%B2%E8%A8%93%E7%B7%B4English.pptx"
+                    )
                 ]
             )
         )

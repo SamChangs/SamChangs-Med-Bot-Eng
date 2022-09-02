@@ -17,11 +17,11 @@ def str_Format(time_str):
 
     def If_none(article):
         if article == "":
-            return "無看診時段"
+            return "No consultation period"
         else:
             return article[0:len(article)-1]
 
-    str_all = '[上午診]\n'+ If_none(str_morning)+'\n' + lin_mark + '[下午診]\n'+ If_none(str_noon)+'\n'  + lin_mark + '[晚間診]\n'+ If_none(str_ning)+"\n"
+    str_all = '[Morning]\n'+ If_none(str_morning)+'\n' + lin_mark + '[Noon]\n'+ If_none(str_noon)+'\n'  + lin_mark + '[Afternoon]\n'+ If_none(str_ning)+"\n"
 
     return str_all
 

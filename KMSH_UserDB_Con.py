@@ -23,7 +23,7 @@ Authdb='Med-Bot'
 sitdb='Taiwan_hospital_data'
 #資料庫連接函式
 
-client = MongoClient('mongodb+srv://toocoolchen:migo2000@cluster0.hywy3.mongodb.net/?retryWrites=true&w=majority')
+client = MongoClient('mongodb+srv://toocoolchen:migo2000@cluster0.hywy3.mongodb.net/test')
 #client = MongoClient("mongodb://stockrobot:tp6w94xu;6@cluster1-shard-00-00.yujl6.gcp.mongodb.net:27017,cluster1-shard-00-01.yujl6.gcp.mongodb.net:27017,cluster1-shard-00-02.yujl6.gcp.mongodb.net:27017/KMSH-bot?ssl=true&replicaSet=atlas-y6ihm4-shard-0&authSource=admin&retryWrites=true&w=majority")
 db = client[Authdb]
 hs_DB = client[sitdb]
@@ -123,6 +123,8 @@ def get_trmode(uid):
     collect = db['lineuser']
     cel=list(collect.find())
     ans=''
+    lang=''
+    trans_func=''
     
     for i in cel:
         if i['uid'] == uid:            
@@ -201,7 +203,7 @@ def add_my_Hospital(user_Id,hs_Name,current_db_type):
 
     for item in my_hospital:
         if hs_Name in item["name"]:
-            message = TextSendMessage(text="已有此筆醫院")
+            message = TextSendMessage(text="This hospital already exists")
             return message
 
     if hs_Name not in my_hospital and len(my_hospital) <5 :
@@ -215,11 +217,11 @@ def add_my_Hospital(user_Id,hs_Name,current_db_type):
                 {"my_hospital": my_hospital}
             }, upsert=True
         )
-        message = TextSendMessage(text="加入成功")
+        message = TextSendMessage(text="Join successfully")
         return message
 
     else:
-        message = TextSendMessage(text="已達儲存上限五筆")
+        message = TextSendMessage(text="The storage limit of five strokes has been reached")
         return message
 
 #========================================
@@ -233,7 +235,7 @@ def add_my_Hospital(user_Id,hs_Name,current_db_type):
 def read_my_Hospital(user_Id):
     def get_hsData(i):
         cellection = hs_DB[i["db"].split("_db")[0]]
-        obj = cellection.find_one({"醫事機構名稱": i["name"]})
+        obj = cellection.find_one({"Name": i["name"]})
         obj.update({"db_type": i["db"]})
         return obj
     origin_data = get_user_data(user_Id)
@@ -265,5 +267,5 @@ def del_my_Hospital(user_Id,hs_Name):
              {"my_hospital": my_hospital}
          }, upsert=True
     )
-    message = TextSendMessage(text="移除成功")
+    message = TextSendMessage(text="Removed successfully")
     return message

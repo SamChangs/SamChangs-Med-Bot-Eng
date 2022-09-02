@@ -4,7 +4,7 @@ from linebot.models import *
 
 def Type_of_visit(address_type):
     flex_message = FlexSendMessage(
-        alt_text='查詢看診類別',
+        alt_text='Search Consultation Category',
         contents=BubbleContainer(
             direction='ltr',
             hero=ImageComponent(
@@ -18,7 +18,7 @@ def Type_of_visit(address_type):
             body=BoxComponent(
                 layout="vertical",
                 contents=[
-                    TextComponent(text="看診類別",
+                    TextComponent(text="Consultation Category",
                                   weight="bold",
                                   size="xl",
                                   wrap=True,
@@ -27,37 +27,37 @@ def Type_of_visit(address_type):
                     SeparatorComponent(margin="md",
                                        color="#000000FF"),
                     ButtonComponent(action=PostbackAction(
-                                    label='地區醫院',
-                                    display_text='查詢地區醫院',
-                                    data="action=search,{lan},{long},地區醫院"
+                                    label='District Hospital',
+                                    display_text='Search District Hospital',
+                                    data="action=search,{lan},{long},District Hospital"
                                         .format(lan=address_type[0], long=address_type[1])
                                     ),
                     ),
                     ButtonComponent(action=PostbackAction(
-                                    label='區域醫院',
-                                    display_text='查詢區域醫院',
-                                    data="action=search,{lan},{long},區域醫院"
+                                    label='Regional Hospital',
+                                    display_text='Search Regional Hospital',
+                                    data="action=search,{lan},{long},Regional Hospital"
                                         .format(lan=address_type[0], long=address_type[1])
                                     ),
                     ),
                     ButtonComponent(action=PostbackAction(
-                                    label='診所',
-                                    display_text='查詢診所',
-                                    data="action=search,{lan},{long},診所"
+                                    label='Clinic Hospital',
+                                    display_text='Search Clinic Hospital',
+                                    data="action=search,{lan},{long},Clinic Hospital"
                                         .format(lan=address_type[0], long=address_type[1])
                                     ),
                     ),
                     ButtonComponent(action=PostbackAction(
-                                    label='醫學中心',
-                                    display_text='查詢醫學中心',
-                                    data="action=search,{lan},{long},醫學中心"
+                                    label='Medicine Hospital',
+                                    display_text='Search Medicine Hospital',
+                                    data="action=search,{lan},{long},Medicine Hospital"
                                         .format(lan=address_type[0], long=address_type[1])
                                     ),
                     ),
                     ButtonComponent(action=PostbackAction(
-                                    label='藥局',
-                                    display_text='查詢藥局',
-                                    data="action=search,{lan},{long},藥局"
+                                    label='Pharmacy Hospital',
+                                    display_text='Search Pharmacy Hospital',
+                                    data="action=search,{lan},{long},Pharmacy Hospital"
                                         .format(lan=address_type[0], long=address_type[1])
                                     ),
                     )
@@ -68,7 +68,7 @@ def Type_of_visit(address_type):
     return  flex_message
 
 def Search_address(lat,long,address_type):
-    if address_type == "地區醫院":
+    if address_type == "District Hospital":
          name = "地區"
          hs_Name = 'Name'
          address = "Address"
@@ -78,7 +78,7 @@ def Search_address(lat,long,address_type):
          Treatment_type = "診療科別"
          db_type_name = "District_hp_db"
 
-    elif address_type == "區域醫院":
+    elif address_type == "Regional Hospital":
          name = "區域"
          hs_Name = 'Name'
          address = "Address"
@@ -88,7 +88,7 @@ def Search_address(lat,long,address_type):
          Treatment_type = "診療科別"
          db_type_name = "Regional_hp_db"
 
-    elif address_type == "診所":
+    elif address_type == "Clinic Hospital":
          name = "診所"
          hs_Name = 'Name'
          address = "Address"
@@ -98,7 +98,7 @@ def Search_address(lat,long,address_type):
          db_type = clinic_hp_db
          db_type_name = "clinic_hp_db"
 
-    elif address_type == "醫學中心":
+    elif address_type == "Medicine Hospital":
          name = "醫學"
          hs_Name = 'Name'
          address = "Address"
@@ -108,7 +108,7 @@ def Search_address(lat,long,address_type):
          db_type = medicine_hp_db
          db_type_name = "medicine_hp_db"
 
-    elif address_type == "藥局":
+    elif address_type == "Pharmacy Hospital":
          name = "藥局"
          hs_Name = 'Name'
          address = "Address"
@@ -262,15 +262,15 @@ def Search_address(lat,long,address_type):
                                         color="#CCCCCCFF"
                                     ),
                                     ButtonComponent(action=MessageAction(
-                                        label="連絡電話",
+                                        label="Phone Number",
                                         text=i["電話"]+ "\n" +i[hs_Name])
                                     ),
                                     SeparatorComponent(
                                         color="#CCCCCCFF"
                                     ),
                                     ButtonComponent(action=PostbackAction(
-                                        label='看診時間',
-                                        display_text='看診時段',
+                                        label='Consultation time',
+                                        display_text='Consultation period',
                                         data="action=time,{hs_Name},{Vs_time}"
                                             .format(hs_Name=i[hs_Name],Vs_time=i[Vs_time])
                                         )
@@ -279,7 +279,7 @@ def Search_address(lat,long,address_type):
                                         color="#CCCCCCFF"
                                     ),
                                     ButtonComponent(action=URIAction(
-                                        label="導航目的地",
+                                        label="Navigation destination",
                                         uri='https://www.google.com/maps/search/?api=1&query={lat},{long}'.format(
                                             lat=i["經度E"], long=i["緯度N"])),
                                     ),
@@ -287,8 +287,8 @@ def Search_address(lat,long,address_type):
                                         color="#CCCCCCFF"
                                     ),
                                     ButtonComponent(action=PostbackAction(
-                                        label='加入我的醫院',
-                                        display_text='{hs_Name}已加入我的醫院'.format(hs_Name=i[hs_Name]),
+                                        label='Join my hospital',
+                                        display_text='{hs_Name}joined my hospital'.format(hs_Name=i[hs_Name]),
                                         data="action=add,{db_type_name},{hs_Name}"
                                             .format(db_type_name=db_type_name, hs_Name=i[hs_Name])
                                         ),
@@ -434,15 +434,15 @@ def Search_address(lat,long,address_type):
                                         color="#CCCCCCFF"
                                     ),
                                     ButtonComponent(action=MessageAction(
-                                        label="連絡電話",
+                                        label="Phone Number",
                                         text=i["電話"]+ "\n" +i[hs_Name])
                                     ),
                                     SeparatorComponent(
                                         color="#CCCCCCFF"
                                     ),
                                     ButtonComponent(action=PostbackAction(
-                                        label='看診時間',
-                                        display_text='看診時段',
+                                        label='Consultation time',
+                                        display_text='Consultation period',
                                         data="action=time,{hs_Name},{Vs_time}"
                                             .format(hs_Name=i[hs_Name], Vs_time=i[Vs_time])
                                     )
@@ -451,7 +451,7 @@ def Search_address(lat,long,address_type):
                                         color="#CCCCCCFF"
                                     ),
                                     ButtonComponent(action=URIAction(
-                                        label="導航目的地",
+                                        label="Navigation destination",
                                         uri='https://www.google.com/maps/search/?api=1&query={lat},{long}'.format(
                                             lat=i["經度E"], long=i["緯度N"])),
                                     ),
@@ -459,8 +459,8 @@ def Search_address(lat,long,address_type):
                                         color="#CCCCCCFF"
                                     ),
                                     ButtonComponent(action=PostbackAction(
-                                        label='加入我的醫院',
-                                        display_text='{hs_Name}已加入我的醫院'.format(hs_Name=i[hs_Name]),
+                                        label='Join my hospital',
+                                        display_text='{hs_Name}joined my hospital'.format(hs_Name=i[hs_Name]),
                                         data="action=add,{db_type_name},{hs_Name}"
                                             .format(db_type_name=db_type_name, hs_Name=i[hs_Name])
                                     ),
@@ -564,7 +564,7 @@ def Search_address(lat,long,address_type):
                                                 color="#000000",
                                                 actions=[
                                                     URIAction(
-                                                        label='連絡電話',
+                                                        label='Phone Number',
                                                         uri="tel:" + i["電話"]
                                                     ),
                                                 ]
@@ -612,15 +612,15 @@ def Search_address(lat,long,address_type):
                                         color="#CCCCCCFF"
                                     ),
                                     ButtonComponent(action=MessageAction(
-                                        label="連絡電話",
+                                        label="Phone Number",
                                         text=i["電話"] + "\n" + i[hs_Name])
                                     ),
                                     SeparatorComponent(
                                         color="#CCCCCCFF"
                                     ),
                                     ButtonComponent(action=PostbackAction(
-                                        label='看診時間',
-                                        display_text='看診時段',
+                                        label='Consultation time',
+                                        display_text='Consultation period',
                                         data="action=time,{hs_Name},{Vs_time}"
                                             .format(hs_Name=i[hs_Name], Vs_time=i[Vs_time])
                                     )
@@ -629,7 +629,7 @@ def Search_address(lat,long,address_type):
                                         color="#CCCCCCFF"
                                     ),
                                     ButtonComponent(action=URIAction(
-                                        label="導航目的地",
+                                        label="Navigation destination",
                                         uri='https://www.google.com/maps/search/?api=1&query={lat},{long}'.format(
                                             lat=i["經度E"], long=i["緯度N"])),
                                     ),
@@ -637,8 +637,8 @@ def Search_address(lat,long,address_type):
                                         color="#CCCCCCFF"
                                     ),
                                     ButtonComponent(action=PostbackAction(
-                                        label='加入我的醫院',
-                                        display_text='{hs_Name}已加入我的醫院'.format(hs_Name=i[hs_Name]),
+                                        label='Join my hospital',
+                                        display_text='{hs_Name}joined my hospital'.format(hs_Name=i[hs_Name]),
                                         data="action=add,{db_type_name},{hs_Name}"
                                             .format(db_type_name=db_type_name, hs_Name=i[hs_Name]),
                                         )
@@ -652,7 +652,7 @@ def Search_address(lat,long,address_type):
                 x += 1
 
     if x == 1:
-        message = TextSendMessage(text="附近沒有相關看診科別")
+        message = TextSendMessage(text="There are no related clinics nearby")
         return message
     elif name == "區域":
         cellection = District_hp_db()
@@ -792,15 +792,15 @@ def Search_address(lat,long,address_type):
                                             color="#CCCCCCFF"
                                         ),
                                         ButtonComponent(action=MessageAction(
-                                            label="連絡電話",
+                                            label="Phone Number",
                                             text=i["電話"]+ "\n" +i[hs_Name])
                                         ),
                                         SeparatorComponent(
                                             color="#CCCCCCFF"
                                         ),
                                         ButtonComponent(action=PostbackAction(
-                                            label='看診時間',
-                                            display_text='看診時段',
+                                            label='Consultation time',
+                                            display_text='Consultation period',
                                             data="action=time,{hs_Name},{Vs_time}"
                                                 .format(hs_Name=i[hs_Name], Vs_time=i[Vs_time])
                                         )
@@ -809,7 +809,7 @@ def Search_address(lat,long,address_type):
                                             color="#CCCCCCFF"
                                         ),
                                         ButtonComponent(action=URIAction(
-                                            label="導航目的地",
+                                            label="Navigation destination",
                                             uri='https://www.google.com/maps/search/?api=1&query={lat},{long}'.format(
                                                 lat=i["經度E"], long=i["緯度N"])),
                                         ),
@@ -817,8 +817,8 @@ def Search_address(lat,long,address_type):
                                             color="#CCCCCCFF"
                                         ),
                                         ButtonComponent(action=PostbackAction(
-                                            label='加入我的醫院',
-                                            display_text='{hs_Name}已加入我的醫院'.format(hs_Name=i[hs_Name]),
+                                            label='Join my hospital',
+                                            display_text='{hs_Name}joined my hospital'.format(hs_Name=i[hs_Name]),
                                             data="action=add,{db_type_name},{hs_Name}"
                                                 .format(db_type_name=db_type_name, hs_Name=i[hs_Name]),
                                         )
@@ -848,10 +848,10 @@ def Quick_text():
     透過 QuickReply 的 LocationAction 讀取張當前使用者位置
     """
     Text_Message = TextSendMessage(
-        text='傳送位置資訊',
+        text='Send location information',
         quick_reply=QuickReply(
             items=[
-                QuickReplyButton(action=LocationAction(label="選擇地點"))
+                QuickReplyButton(action=LocationAction(label="Choose a location"))
             ]
        )
     )
@@ -864,8 +864,8 @@ def confirm_db_type(my_Hospital):
     global db_type, hs_Name, name, address, text_error, Org_species, Vs_time, db_type_name, Treatment_type
 
     if my_Hospital["db_type"] == "District_hp_db":
-        hs_Name = '醫事機構名稱'
-        address = "地 址 "
+        hs_Name = 'Name'
+        address = "Address"
         name = "地區"
         Vs_time = "固定看診時段 "
         Org_species = "特約類別"
@@ -873,32 +873,32 @@ def confirm_db_type(my_Hospital):
 
     elif my_Hospital["db_type"] == "Regional_hp_db":
         name = "區域"
-        hs_Name = '醫事機構名稱'
-        address = "地 址 "
-        Vs_time = "固定看診時段 "
+        hs_Name = 'Name'
+        address = "Address"
+        Vs_time = "固定看診時段"
         Org_species = "特約類別"
-        Treatment_type = "診療科別 "
+        Treatment_type = "診療科別"
 
     elif my_Hospital["db_type"] == "clinic_hp_db":
         name = "診所"
-        hs_Name = '醫事機構名稱'
-        address = "地址 "
+        hs_Name = 'Name'
+        address = "Address"
         Vs_time = "固定看診時段 "
         Org_species = "特約類別"
         Treatment_type = "診療科別 "
 
     elif my_Hospital["db_type"] == "medicine_hp_db":
         name = "醫學"
-        hs_Name = '醫事機構名稱'
-        address = "地 址 "
+        hs_Name = 'Name'
+        address = "Address"
         Vs_time = "固定看診時段"
         Org_species = "特約類別"
-        Treatment_type = "診療科別 "
+        Treatment_type = "診療科別"
 
     elif my_Hospital["db_type"] == "pharmacy_hp_db":
         name = "藥局"
-        hs_Name = '醫事機構名稱'
-        address = "地址"
+        hs_Name = 'Name'
+        address = "Address"
         Vs_time = "固定看診時段"
         Org_species = "特約類別"
         Treatment_type = "診療科別"
@@ -1049,15 +1049,15 @@ def reply_Hospital(my_Hospital):
                                 color="#CCCCCCFF"
                             ),
                             ButtonComponent(action=MessageAction(
-                                label="連絡電話",
+                                label="Phone Number",
                                 text=i["電話"] + "\n" + i[hs_Name])
                             ),
                             SeparatorComponent(
                                 color="#CCCCCCFF"
                             ),
                             ButtonComponent(action=PostbackAction(
-                                label='看診時間',
-                                display_text='看診時段',
+                                label='Consultation time',
+                                display_text='Consultation period',
                                 data="action=time,{hs_Name},{Vs_time}"
                                     .format(hs_Name=i[hs_Name], Vs_time=i[Vs_time])
                             )
@@ -1066,7 +1066,7 @@ def reply_Hospital(my_Hospital):
                                 color="#CCCCCCFF"
                             ),
                             ButtonComponent(action=URIAction(
-                                label="導航目的地",
+                                label="Navigation destination",
                                 uri='https://www.google.com/maps/search/?api=1&query={lat},{long}'.format(
                                     lat=i["經度E"], long=i["緯度N"])),
                             ),
@@ -1074,8 +1074,8 @@ def reply_Hospital(my_Hospital):
                                 color="#CCCCCCFF"
                             ),
                             ButtonComponent(action=PostbackAction(
-                                label='從我的醫院移除',
-                                display_text='{hs_Name}已從我的醫院移除'.format(hs_Name=i[hs_Name]),
+                                label='Removed from my hospital',
+                                display_text='{hs_Name} has been removed from my hospital'.format(hs_Name=i[hs_Name]),
                                 data="action=del,{hs_Name}"
                                     .format(hs_Name=i[hs_Name])
                                 ),

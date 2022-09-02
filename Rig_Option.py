@@ -22,12 +22,12 @@ def Ask(uid,dept):
                                 text=dept
                                 ),
                             MessageTemplateAction(
-                                label= '繼續使用看診建議',
-                                text= '看診建議'
+                                label= 'Continue',
+                                text= 'Medical Department Recommendation'
                                 ),
                             MessageTemplateAction(
-                                label= '離開看診建議',
-                                text= '離開看診'
+                                label= 'Leave consultation advice',
+                                text= 'Leave the Medical Department'
                                 ),
                         
                         ]

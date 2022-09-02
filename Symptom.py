@@ -8,14 +8,14 @@ Created on Sat Sep 19 14:26:36 2020
 from linebot import (LineBotApi, WebhookHandler, exceptions)
 from linebot.exceptions import (InvalidSignatureError)
 from linebot.models import *
-line_bot_api = LineBotApi('F5q3+1gA8yhn4TUrhfxY2g4izN0zK4fOc/6aHB8IDAuMMyXkRSLNKWeQctDL0LfUZtesB89QjNqoQeOSXKeOTfzxiX9wwn//CmU+1s1Ifa6avkuS4v7C7Zfbbov/i7H7Xm9vnz8b3Xrb9JN+okpL6gdB04t89/1O/w1cDnyilFU=')
+line_bot_api = LineBotApi('Q65IelWgsFiWzJL7srk++OKbP70q9OzqVJXAY3+iXKOOb/E0tVZ2+xJxgrfdN0jbmYmcz2SQEQIFugb0WMmSYkbO3odUAhS/NSVKdmCK60lk6omrnKTWc34zfSjAwoHVCf9ebnmd62zjdFyfE9EWfwdB04t89/1O/w1cDnyilFU=')
 #line_bot_api = LineBotApi('edFUkQybndZah161EJSfCNEhnNbwrS92WB2W8w+/uSZJiI+U+u5Ylfw7rBT32kplCQ3DahfN3+LdayHLDOMwJ0QSMZkHxRhdUo6A3Im9+R1xq3XuvB65DdH9dLUPSuiimB7cJA9G6qxdt+s8ZpjThQdB04t89/1O/w1cDnyilFU=')
 
 ######################### 胃腸內科 ###########################################
 def Head(uid):
        
     sym_message = TemplateSendMessage(
-        alt_text='頭部症狀',
+        alt_text='Head Symptoms',
         template=CarouselTemplate(
             columns=[
 # -----------------------------------------------------------------------------                    
@@ -23,8 +23,8 @@ def Head(uid):
                     #image_aspect_ratio='square',
                     #imageSize='contain',
                     #thumbnail_image_url='https://lh3.googleusercontent.com/9-WGrDtOPx6wBT-xPmCLIRIv-ZRJNXXxcFa-HsDHUKwLRfgSicHZ0C7Tf0IuFQDj8XQHET_iQ1yFUAjXJruMZYMpmf1C1DEZFBpf0o74t048LK6vBU1fNWN8HMfew7wV3NzIDJR6ew=w400',
-                    title='頭頸部症狀選單-1/4',
-                    text='請選擇您目前有的身體症狀群，如下:',
+                    title='Head Symptoms Menu-1/4',
+                    text='Please select the symptoms you currently have, such as :  ',
                     actions=[
                         MessageTemplateAction(
                             label='頭痛/頭暈/頭沉重',
@@ -45,8 +45,8 @@ def Head(uid):
                     #image_aspect_ratio='square',
                     #imageSize='contain',
                     #thumbnail_image_url='https://lh3.googleusercontent.com/9-WGrDtOPx6wBT-xPmCLIRIv-ZRJNXXxcFa-HsDHUKwLRfgSicHZ0C7Tf0IuFQDj8XQHET_iQ1yFUAjXJruMZYMpmf1C1DEZFBpf0o74t048LK6vBU1fNWN8HMfew7wV3NzIDJR6ew=w400',
-                    title='頭頸部症狀選單-2/4',
-                    text='請選擇您目前有的身體症狀群，如下:',
+                    title='Head Symptoms Menu-2/4',
+                    text='Please select the symptoms you currently have, such as :  ',
                     actions=[
                         MessageTemplateAction(
                             label='鞏膜泛黃',
@@ -67,8 +67,8 @@ def Head(uid):
                     #image_aspect_ratio='square',
                     #imageSize='contain',
                     #thumbnail_image_url='https://lh3.googleusercontent.com/9-WGrDtOPx6wBT-xPmCLIRIv-ZRJNXXxcFa-HsDHUKwLRfgSicHZ0C7Tf0IuFQDj8XQHET_iQ1yFUAjXJruMZYMpmf1C1DEZFBpf0o74t048LK6vBU1fNWN8HMfew7wV3NzIDJR6ew=w400',
-                    title='頭頸部症狀選單-3/4',
-                    text='請選擇您目前有的身體症狀群，如下:',
+                    title='Head Symptoms Menu-3/4',
+                    text='Please select the symptoms you currently have, such as :  ',
                     actions=[
                         MessageTemplateAction(
                             label='喉嚨痛沙啞/聽力障礙/頸部腫塊',
@@ -89,8 +89,8 @@ def Head(uid):
                     #image_aspect_ratio='square',
                     #imageSize='contain',
                     #thumbnail_image_url='https://lh3.googleusercontent.com/9-WGrDtOPx6wBT-xPmCLIRIv-ZRJNXXxcFa-HsDHUKwLRfgSicHZ0C7Tf0IuFQDj8XQHET_iQ1yFUAjXJruMZYMpmf1C1DEZFBpf0o74t048LK6vBU1fNWN8HMfew7wV3NzIDJR6ew=w400',
-                    title='頭頸部症狀選單-4/4',
-                    text='請選擇您目前有的身體症狀群，如下:',
+                    title='Head Symptoms Menu-4/4',
+                    text='Please select the symptoms you currently have, such as :  ',
                     actions=[
                         MessageTemplateAction(
                             label='牙齒敏感/酸痛/口臭黃牙',
@@ -126,7 +126,7 @@ def Head2(uid):
                     #imageSize='contain',
                     #thumbnail_image_url='https://lh3.googleusercontent.com/9-WGrDtOPx6wBT-xPmCLIRIv-ZRJNXXxcFa-HsDHUKwLRfgSicHZ0C7Tf0IuFQDj8XQHET_iQ1yFUAjXJruMZYMpmf1C1DEZFBpf0o74t048LK6vBU1fNWN8HMfew7wV3NzIDJR6ew=w400',
                     title='頭頸部第二症狀選單-1/2',
-                    text='請選擇您目前有的身體症狀群，如下:',
+                    text='Please select the symptoms you currently have, such as :  ',
                     actions=[
                         MessageTemplateAction(
                             label='血壓高/暈倒',
@@ -148,7 +148,7 @@ def Head2(uid):
                     #imageSize='contain',
                     #thumbnail_image_url='https://lh3.googleusercontent.com/9-WGrDtOPx6wBT-xPmCLIRIv-ZRJNXXxcFa-HsDHUKwLRfgSicHZ0C7Tf0IuFQDj8XQHET_iQ1yFUAjXJruMZYMpmf1C1DEZFBpf0o74t048LK6vBU1fNWN8HMfew7wV3NzIDJR6ew=w400',
                     title='頭頸部第二症狀選單-2/2',
-                    text='請選擇您目前有的身體症狀群，如下:',
+                    text='Please select the symptoms you currently have, such as :  ',
                     actions=[
                         MessageTemplateAction(
                             label='頸部腫塊/聲音沙啞',
@@ -184,7 +184,7 @@ def Head3(uid):
                     #imageSize='contain',
                     #thumbnail_image_url='https://lh3.googleusercontent.com/9-WGrDtOPx6wBT-xPmCLIRIv-ZRJNXXxcFa-HsDHUKwLRfgSicHZ0C7Tf0IuFQDj8XQHET_iQ1yFUAjXJruMZYMpmf1C1DEZFBpf0o74t048LK6vBU1fNWN8HMfew7wV3NzIDJR6ew=w400',
                     title='頭頸部第二症狀選單',
-                    text='請選擇您目前有的身體症狀群，如下:',
+                    text='Please select the symptoms you currently have, such as :  ',
                     actions=[
                         MessageTemplateAction(
                             label='上腹痛/腹脹/嘔吐',
@@ -219,8 +219,8 @@ def Neck(uid):
                     #image_aspect_ratio='square',
                     #imageSize='contain',
                     #thumbnail_image_url='https://lh3.googleusercontent.com/9-WGrDtOPx6wBT-xPmCLIRIv-ZRJNXXxcFa-HsDHUKwLRfgSicHZ0C7Tf0IuFQDj8XQHET_iQ1yFUAjXJruMZYMpmf1C1DEZFBpf0o74t048LK6vBU1fNWN8HMfew7wV3NzIDJR6ew=w400',
-                    title='頸症狀選單',
-                    text='請選擇您目前有的身體症狀群，如下:',
+                    title='Neck Symptoms Menu',
+                    text='Please select the symptoms you currently have, such as :  ',
                     actions=[
                         MessageTemplateAction(
                             label='後頸頭痛/頭部撞擊',
