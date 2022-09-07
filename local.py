@@ -867,7 +867,7 @@ def confirm_db_type(my_Hospital):
         hs_Name = 'Name'
         address = "Address"
         name = "區域"
-        Vs_time = "固定看診時段 "
+        Vs_time = "固定看診時段"
         Org_species = "facility type"
         Treatment_type = "Medical Specialty"
 
@@ -883,7 +883,7 @@ def confirm_db_type(my_Hospital):
         name = "診所"
         hs_Name = 'Name'
         address = "Address"
-        Vs_time = "固定看診時段 "
+        Vs_time = "固定看診時段"
         Org_species = "facility type"
         Treatment_type = "Medical Specialty"
 
@@ -912,7 +912,7 @@ def reply_Hospital(my_Hospital):
     bubbles = []
 
     if my_Hospital == []:  #判斷我的醫院內陣列內是否有資料，沒有的話 return message
-        message = TextSendMessage(text="尚未加入醫院")
+        message = TextSendMessage(text="Not yet joined the hospital")
         return message
     for i in my_Hospital:
         confirm_db_type(i)
