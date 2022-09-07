@@ -23,7 +23,7 @@ Authdb='Med-Bot'
 sitdb='Taiwan_hospital_data'
 #資料庫連接函式
 
-client = MongoClient('mongodb://toocoolchen:migo2000@cluster0.hywy3.mongodb.net/test')
+client = MongoClient('mongodb+srv://toocoolchen:migo2000@cluster0.hywy3.mongodb.net/test')
 #client = MongoClient("mongodb://stockrobot:tp6w94xu;6@cluster1-shard-00-00.yujl6.gcp.mongodb.net:27017,cluster1-shard-00-01.yujl6.gcp.mongodb.net:27017,cluster1-shard-00-02.yujl6.gcp.mongodb.net:27017/KMSH-bot?ssl=true&replicaSet=atlas-y6ihm4-shard-0&authSource=admin&retryWrites=true&w=majority")
 db = client[Authdb]
 hs_DB = client[sitdb]
