@@ -69,23 +69,23 @@ def Type_of_visit(address_type):
 
 def Search_address(lat,long,address_type):
     if address_type == "District Hospital":
-         name = "地區"
+         name = "區域"
          hs_Name = 'Name'
          address = "Address"
          db_type = District_hp_db
          Vs_time = "固定看診時段"
-         Org_species = "特約類別"
-         Treatment_type = "診療科別"
+         Org_species = "facility type"
+         Treatment_type = "Medical Specialty"
          db_type_name = "District_hp_db"
 
     elif address_type == "Regional Hospital":
-         name = "區域"
+         name = "地區"
          hs_Name = 'Name'
          address = "Address"
          db_type = Regional_hp_db
          Vs_time = "固定看診時段"
-         Org_species = "特約類別"
-         Treatment_type = "診療科別"
+         Org_species = "facility type"
+         Treatment_type = "Medical Specialty"
          db_type_name = "Regional_hp_db"
 
     elif address_type == "Clinic Hospital":
@@ -93,8 +93,8 @@ def Search_address(lat,long,address_type):
          hs_Name = 'Name'
          address = "Address"
          Vs_time = "固定看診時段 "
-         Org_species = "特約類別"
-         Treatment_type = "診療科別 "
+         Org_species = "facility type"
+         Treatment_type = "Medical Specialty"
          db_type = clinic_hp_db
          db_type_name = "clinic_hp_db"
 
@@ -103,18 +103,18 @@ def Search_address(lat,long,address_type):
          hs_Name = 'Name'
          address = "Address"
          Vs_time = "固定看診時段"
-         Org_species = "特約類別"
-         Treatment_type = "診療科別"
+         Org_species = "facility type"
+         Treatment_type = "Medical Specialty"
          db_type = medicine_hp_db
-         db_type_name = "medicine_hp_db"
+         db_type_name = "Medical Specialty"
 
     elif address_type == "Pharmacy Hospital":
          name = "藥局"
          hs_Name = 'Name'
          address = "Address"
          Vs_time = "固定看診時段"
-         Org_species = "特約類別"
-         Treatment_type = "診療科別"
+         Org_species = "facility type"
+         Treatment_type = "Medical Specialty"
          db_type = pharmacy_hp_db
          db_type_name = "pharmacy_hp_db"
     else:
@@ -866,42 +866,42 @@ def confirm_db_type(my_Hospital):
     if my_Hospital["db_type"] == "District_hp_db":
         hs_Name = 'Name'
         address = "Address"
-        name = "地區"
+        name = "區域"
         Vs_time = "固定看診時段 "
-        Org_species = "特約類別"
-        Treatment_type = "診療科別 "
+        Org_species = "facility type"
+        Treatment_type = "Medical Specialty"
 
     elif my_Hospital["db_type"] == "Regional_hp_db":
-        name = "區域"
+        name = "地區"
         hs_Name = 'Name'
         address = "Address"
         Vs_time = "固定看診時段"
-        Org_species = "特約類別"
-        Treatment_type = "診療科別"
+        Org_species = "facility type"
+        Treatment_type = "Medical Specialty"
 
     elif my_Hospital["db_type"] == "clinic_hp_db":
         name = "診所"
         hs_Name = 'Name'
         address = "Address"
         Vs_time = "固定看診時段 "
-        Org_species = "特約類別"
-        Treatment_type = "診療科別 "
+        Org_species = "facility type"
+        Treatment_type = "Medical Specialty"
 
     elif my_Hospital["db_type"] == "medicine_hp_db":
         name = "醫學"
         hs_Name = 'Name'
         address = "Address"
         Vs_time = "固定看診時段"
-        Org_species = "特約類別"
-        Treatment_type = "診療科別"
+        Org_species = "facility type"
+        Treatment_type = "Medical Specialty"
 
     elif my_Hospital["db_type"] == "pharmacy_hp_db":
         name = "藥局"
         hs_Name = 'Name'
         address = "Address"
         Vs_time = "固定看診時段"
-        Org_species = "特約類別"
-        Treatment_type = "診療科別"
+        Org_species = "facility type"
+        Treatment_type = "Medical Specialty"
 
     else:
         raise NameError("Error address_type name")

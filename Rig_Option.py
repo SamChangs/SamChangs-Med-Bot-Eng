@@ -26,7 +26,7 @@ def Ask(uid,dept):
                                 text= 'Medical Department Recommendation'
                                 ),
                             MessageTemplateAction(
-                                label= 'Leave consultation advice',
+                                label= 'Leave',
                                 text= 'Leave the Medical Department'
                                 ),
                         

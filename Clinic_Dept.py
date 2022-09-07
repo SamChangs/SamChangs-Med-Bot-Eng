@@ -182,7 +182,7 @@ def Gas(uid):
     line_bot_api.push_message(uid, clinic_message)    
     return 0
 
-############################## 肝膽胰內科 #####################################
+############################## Calf edema / Foot swelling #####################################
 def Hep(uid):
         
     clinic_message = TemplateSendMessage(

@@ -54,8 +54,9 @@ app = Flask(__name__)
 line_bot_api = LineBotApi('Q65IelWgsFiWzJL7srk++OKbP70q9OzqVJXAY3+iXKOOb/E0tVZ2+xJxgrfdN0jbmYmcz2SQEQIFugb0WMmSYkbO3odUAhS/NSVKdmCK60lk6omrnKTWc34zfSjAwoHVCf9ebnmd62zjdFyfE9EWfwdB04t89/1O/w1cDnyilFU=')
 # Channel Secret
 handler = WebhookHandler('cbaa8a628d50ff5c58ea16bad479bfa1')
+#'cbaa8a628d50ff5c58ea16bad479bfa1'
 # LINE BOT 開發者預設ID，以接收啟動信息 
-line_bot_api.push_message('Ub719dea14f41f0e9ac414e5b95435c9c', TextSendMessage(text='OK,I am DR. Echo! May I help you? ｡^‿^｡'))
+# line_bot_api.push_message('Ub719dea14f41f0e9ac414e5b95435c9c', TextSendMessage(text='OK,I am DR. Echo! May I help you? ｡^‿^｡'))
 
 # 監聽所有來自 /callback 的 Post Request
 @app.route("/callback", methods=['POST'])
@@ -610,46 +611,46 @@ def handle_message(event):
             base_url='https://lh3.googleusercontent.com/fife/AAbDypBazBR0kg4Tel-CQRPRBA1_hhhNn2UVre-ZO4I7qG_LazITOAjR4kNF5tvmuFNZTA6M7ZDE_MLy7W8L9XT44Vr9jP5n59iB8xa5EQJ83hzLRUvLipqB_gbsQaE2YFv3lE50-stWQVB3Swg9j9u7g7HFoq6VnjFZwNZDdvEvYyL_iUCvxBbDtPxxEwa_oKWvA-AaWiOTh8AVQy5ahTLi8Jeu-iZOQGH6SUZb2qgdYT32Y9MiEhK6QvVAmm7FZVi610Rz0ApKAOUVKqS4u3t7WwpkDR8N-g5LPSTcixtEAwyusWv7DK3ERW7rooo1mqM1AGCYCwiug4kBoijH8VGAZ4XpcluChWneZ351l0-NoOpQDcBxpKft4n6IA62zBe6S0AjadCqFID4OR10YfaBBWdNFGdWsZ8Rlf3RjuOmM7bHlaiqdOhJGJ4SttqWC9k1F6SYhMVlvxt8culAJwTnEozZoM_Zx6bdM31icpHB-4YHWYHsKRfkLlokqFCV1yaiOc4WvmmX4_IjnyCQ-NtyIaU9CQwNzkt5k0Y9CNtXDfjq8vByXmwc-Zn9-dIhSqoGqazs5SuvWdE5zX4xELfq45sCGoSjK8MYvb1017pkxSEivvza0swcqe17CX86hYGfpcQNXdZa5uGT4_g5vbRsci-QCgX7HLlJekYdwQTiuhqh1aFpg4IZHi6pgJFZKlK5z8d8vKxc_K8IQR7DXdOF3vomMEiBoeMPbZ8zQfB2iTxhsFBQ10yChsBjlsk1PUMzqQi2OorloOqVgr3IhVgKIdLxcgqqC0oeY_ktHmcTC7TgoP8n_zOhH8vYlbeCD9nVoQfrdULtiYaqsn8CJkoSpyUG3mk1h7i0R-dxlAWJ0ojF-aIFeU9zpjzgrLoo_AIKgxwMonFSH1f_HmBN_y2gZnlU__WY92iZ5j5WdB-drkkFSlnkKAQdxHWyyfuaBlp18iTuRTnLD_MrJuirF3-hWgtcsJJMzPOceqt_Lhobxk2FuI_Ux0Ad8HrdJ-dyHndW0lm8qKwpKrhA4IjHmr6n9RtXWIY04kGCP5ASHtXH3zmRsbI5msCRLK-2w5XEBUHWBS78Hdbn5G_jxzgu-KZgE5hg19bTtA4m8otv0_h2oBBJELV7JAJEvAUh0RNVkwJe_vaCoFY2Mezjdj20-1NKITejzXWJjq2g3ItH2vToCzD8D-PobTDFvgfnH6cwCzzepjDbYbUCthiuE-4DLMmpu-y30a3NJfM49Uf2iiR435NCKqZ8l6Ek6zTYiC_mp1ucF9fLgVon5hA2i7IeX29jy-zd96hqyuIt5dTtp-ZBSmz7_JX-rxivHVl62nAsI6W6UC7XAnHNfSD4OYeDV=w1600-h1600?authuser=0',
             alt_text='imagemap',
             base_size=BaseSize(height=1040, width=1200),
-               actions=[
-                MessageImagemapAction (
-                    text='Head Symptoms',
-                    area=ImagemapArea(
-                        x=0, y=0, width=520, height=320
-                    )
-                ),
-                MessageImagemapAction (
-                    text='Neck Symptoms',
-                    area=ImagemapArea(
-                        x=0, y=320, width=520, height=260
-                    )
-                ),
-                MessageImagemapAction (
-                    text='Symptoms of Limbs',
-                    area=ImagemapArea(
-                        x=0, y=580, width=520, height=460
-                    )
-                ),
-                MessageImagemapAction(
-                    text='General Symptoms',
-                    area=ImagemapArea(
-                        x=520, y=0, width=520, height=320
-                    )
-                ),
-                MessageImagemapAction(
-                    text='Upper Abdomen Symptoms',
-                    area=ImagemapArea(
-                        x=520, y=320, width=520, height=320
-                    )
-                ),
-                MessageImagemapAction(
-                    text='Lower Abdomen Symptoms',
-                    area=ImagemapArea(
-                        x=520, y=640, width=520, height=400
-                    )
-                ),
-        
+                actions=[
+                    MessageImagemapAction(
+                        text='Head Symptoms',
+                        area=ImagemapArea(
+                            x=0, y=0, width=520, height=320
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='Neck Symptoms',
+                        area=ImagemapArea(
+                            x=0, y=320, width=520, height=260
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='Symptoms of Limbs',
+                        area=ImagemapArea(
+                            x=0, y=580, width=520, height=460
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='General Symptoms',
+                        area=ImagemapArea(
+                            x=520, y=0, width=520, height=320
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='Upper Abdomen Symptoms',
+                        area=ImagemapArea(
+                            x=520, y=320, width=520, height=320
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='Lower Abdomen Symptoms',
+                        area=ImagemapArea(
+                            x=520, y=640, width=520, height=400
+                        )
+                    ),
+
                 ]
-            )        
+            )
             #line_bot_api.push_message(uid, diagnosis_message)
             line_bot_api.push_message(uid, imagemap_message)
                                                 
@@ -660,56 +661,30 @@ def handle_message(event):
         elif  user_message == 'H1' :
             s1='H1'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[H1:頭痛/頭暈/頭沉重]'
+            H1_sym_message='Your current symptom:\n[H1:Headache / dizziness / heavy head]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))             
             Symptom.Head2(uid)
         
         elif  user_message == 'H2' :
             s1='H2'
-            KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[H2:吞嚥進食困難]'
+            KMSH_UserDB_Con.set_s1(uid, s1)
+            H1_sym_message='Your current symptom:\n[H2:Difficulty swallowing and eating]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))            
             Symptom.Head3(uid) 
        
         elif  user_message == 'H3' : 
             s1='H3'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[H3:頸部變形/疼痛/麻木]。'+ line_mark +'建議看診科別:[骨科]'
+            H1_sym_message='Your current symptom:\n[H3:Neck deformation / pain / numbnes]。'+ line_mark +'Recommended clinic:[Orthopedics]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
-            reg_info = TemplateSendMessage(
-                alt_text='看診建議掛號科別:',
-                template = ButtonsTemplate(                    
-                    title='看診建議掛號科別:',
-                    text= '[骨科]',
-                    actions= [
-                        MessageTemplateAction(
-                            label= '掛號骨科A',
-                            text='掛號骨科A'
-                            ),
-                        MessageTemplateAction(
-                            label= '掛號骨科B',
-                            text='掛號骨科B'
-                            ),
-                        MessageTemplateAction(
-                            label= 'Continue',
-                            text= 'Medical Department Recommendation'
-                            ),
-                        MessageTemplateAction(
-                            label= 'Leave consultation advice',
-                            text= 'Leave the Medical Department'
-                            ),
-                        
-                    ]
-                )
-            )           
-            line_bot_api.push_message(uid, reg_info)            
+
             lang ='中'
             KMSH_UserDB_Con.dis_trmode(uid,lang)  #取消看診模式，回到一般查詢模式(門診掛號功能)
                                    
         elif  user_message == 'H4' : 
             s1='H4'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[H4:鞏膜泛黃]。'+ line_mark +'建議看診科別:[肝膽胰內科]'
+            H1_sym_message='Your current symptom:\n[H4:Yellow sclera]。'+ line_mark +'Recommended clinic:[Hepatic-biliary-pancreatic Medicine]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號肝膽胰內科'
             Rig_Option.Ask(uid,rig_dept)
@@ -719,7 +694,7 @@ def handle_message(event):
         elif  user_message == 'H5' : 
             s1='H5'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[H5:青春痘/掉髮/皮膚黑斑]。'+ line_mark +'建議看診科別:[皮膚科]'
+            H1_sym_message='Your current symptom:\n[H5:Acne / Hair loss / Dark skin]。'+ line_mark +'Recommended clinic:[Dermatology]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message)) 
             rig_dept='掛號皮膚科'
             Rig_Option.Ask(uid,rig_dept)
@@ -729,7 +704,7 @@ def handle_message(event):
         elif  user_message == 'H6' : 
             s1='H6'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[H6:頭部撞擊/後頸疼痛]。'+ line_mark +'建議看診科別:[腦神經外科]'
+            H1_sym_message='Your current symptom:\n[H6:Head impact / back of neck pain]。'+ line_mark +'Recommended clinic:[Neurosurgery]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號腦神經外科'
             Rig_Option.Ask(uid,rig_dept) 
@@ -739,7 +714,7 @@ def handle_message(event):
         elif  user_message == 'H7' : 
             s1='H7'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[H7:喉嚨痛沙啞/聽力障礙/頸部腫塊]。'+ line_mark +'建議看診科別:[耳鼻喉科]'
+            H1_sym_message='Your current symptom:\n[H7:Sore throat or hoarseness / hearing impairment / Neck lump ]。'+ line_mark +'Recommended clinic:[ENT Dept.]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號耳鼻喉科'
             Rig_Option.Ask(uid,rig_dept)
@@ -749,7 +724,7 @@ def handle_message(event):
         elif  user_message == 'H8' : 
             s1='H8'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[H8:視力模糊/眼睛乾澀/異物感]。'+ line_mark +'建議看診科別:[眼科]'
+            H1_sym_message='Your current symptom:\n[H8:Blurred vision / dry eyes / foreign body sensation]。'+ line_mark +'Recommended clinic:[Ophthalmology]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號眼科'
             Rig_Option.Ask(uid,rig_dept)
@@ -759,7 +734,7 @@ def handle_message(event):
         elif  user_message == 'H9' : 
             s1='H9'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[H9:眼睛有飛蚊/眼睛癢疼痛/眼睛癢]。'+ line_mark +'建議看診科別:[眼科]'
+            H1_sym_message='Your current symptom:\n[H9:Eye floater/ eye pain / itchy eyes]。'+ line_mark +'Recommended clinic:[Ophthalmology]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))  
             rig_dept='掛號眼科'
             Rig_Option.Ask(uid,rig_dept) 
@@ -769,7 +744,7 @@ def handle_message(event):
         elif  user_message == 'H10' : 
             s1='H10'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[H10:牙齒敏感/酸痛/口臭黃牙]。'+ line_mark +'建議看診科別:[牙科]'
+            H1_sym_message='Your current symptom:\n[H10:Teeth sensitivity / Soreness / Bad breath or yellow teeth]。'+ line_mark +'Recommended clinic:[Dentistry Dept.]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message)) 
             rig_dept='掛號牙科一診'
             Rig_Option.Ask(uid,rig_dept)
@@ -779,7 +754,7 @@ def handle_message(event):
         elif  user_message == 'H11' : 
             s1='H11'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[H11:牙齦紅腫/齒縫大]。'+ line_mark +'建議看診科別:[牙科]'
+            H1_sym_message='Your current symptom:\n[H11:Red and swollen gums / large gaps between teeth]。'+ line_mark +'Recommended clinic:[Dentistry Dept.]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message)) 
             rig_dept='掛號牙科一診'
             Rig_Option.Ask(uid,rig_dept)
@@ -789,42 +764,15 @@ def handle_message(event):
         elif  user_message == 'H12' : 
             s1='H12'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[H12:口腔潰瘍/潰爛]。'+ line_mark +'建議看診科別:[耳鼻喉科/牙科]'
-            line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))                        
-            reg_info = TemplateSendMessage(
-                alt_text='看診建議掛號科別:',
-                template = ButtonsTemplate(                    
-                    title='看診建議掛號科別:',
-                    text= '[耳鼻喉科/牙科]',
-                    actions= [
-                        MessageTemplateAction(
-                            label= '掛號耳鼻喉科',
-                            text='掛號耳鼻喉科'
-                            ),
-                        MessageTemplateAction(
-                            label= '掛號牙科',
-                            text='掛號牙科'
-                            ),
-                        MessageTemplateAction(
-                            label= 'Continue',
-                            text= '看診建議'
-                            ),
-                        MessageTemplateAction(
-                            label= 'Leave consultation advice',
-                            text= 'Leave the Medical Department'
-                            ),
-                        
-                    ]
-                )
-            )           
-            line_bot_api.push_message(uid, reg_info)
+            H1_sym_message='Your current symptom:\n[H12:Oral ulcer/ ulcer]。'+ line_mark +'Recommended clinic:[ENT Dept. / Dentistry Dept.]'
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             lang ='中'
             KMSH_UserDB_Con.dis_trmode(uid,lang)  #取消看診模式，回到一般查詢模式(門診掛號功能)            
 #--------------------頭部症狀 H1頭痛/頭暈/頭沉重 之 第二種症狀----------------------------------------            
         elif  user_message == 'H13' : 
             s2='H13'
             KMSH_UserDB_Con.set_s2(uid,s2)
-            H1_sym_message='您先前已選症狀:\n[H1:頭痛/頭暈/頭沉重]、\n[H13:血壓高/暈倒]。'+ line_mark +'建議看診科別:[心臟內科]'
+            H1_sym_message='Your current symptom:\n[H1:Headache / dizziness / heavy head]、\n[H13:High blood pressure / fainting]。'+ line_mark +'Recommended clinic:[Cardiology]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message)) 
             rig_dept='掛號心臟內科'
             Rig_Option.Ask(uid,rig_dept)
@@ -834,7 +782,7 @@ def handle_message(event):
         elif  user_message == 'H14' : 
             s2='H14'
             KMSH_UserDB_Con.set_s2(uid,s2)
-            H1_sym_message='您先前已選症狀:\n[H1:頭痛/頭暈/頭沉重]、\n[H14:發燒/紅疹/全身肌肉痛/關節痛]。'+ line_mark +'建議看診科別:[感染內科]'
+            H1_sym_message='Your current symptom:\n[H1:Headache / dizziness / heavy head]、\n[H14:Fever / rash / general muscle pain / arthralgia]。'+ line_mark +'Recommended clinic:[Infectious Disease]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message)) 
             rig_dept='掛號感染內科'
             Rig_Option.Ask(uid,rig_dept)
@@ -844,7 +792,7 @@ def handle_message(event):
         elif  user_message == 'H15' : 
             s2='H15'
             KMSH_UserDB_Con.set_s2(uid,s2)
-            H1_sym_message='您先前已選症狀:\n[H1:頭痛/頭暈/頭沉重]、\n[H15:耳鳴/鼻涕/喉嚨痛/聽力障礙]。'+ line_mark +'建議看診科別:[耳鼻喉科]'
+            H1_sym_message='Your current symptom:\n[H1:Headache / dizziness / heavy head]、\n[H15:Tinnitus/nasal discharge/sore throat/hearing impairment]。'+ line_mark +'Recommended clinic:[ENT Dept.]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號耳鼻喉科'
             Rig_Option.Ask(uid,rig_dept)
@@ -854,7 +802,7 @@ def handle_message(event):
         elif  user_message == 'H16' : 
             s2='H16'
             KMSH_UserDB_Con.set_s2(uid,s2)
-            H1_sym_message='您先前已選症狀:\n[H1:頭痛/頭暈/頭沉重]、\n[H16:頸部腫塊/聲音沙啞]。'+ line_mark +'建議看診科別:[耳鼻喉科]'
+            H1_sym_message='Your current symptom:\n[H1:Headache / dizziness / heavy head]、\n[H16:Neck lump / hoarse voice]。'+ line_mark +'Recommended clinic:[ENT Dept.]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號耳鼻喉科'
             Rig_Option.Ask(uid,rig_dept)
@@ -864,7 +812,7 @@ def handle_message(event):
         elif  user_message == 'H17' : 
             s2='H17'
             KMSH_UserDB_Con.set_s2(uid,s2)
-            H1_sym_message='您先前已選症狀:\n[H1:頭痛/頭暈/頭沉重]、\n[H17:耳鳴/記憶力減退/嘴巴歪斜]。'+ line_mark +'建議看診科別:[神經內科]'
+            H1_sym_message='Your current symptom:\n[H1:Headache / dizziness / heavy head]、\n[H17:Tinnitus / memory loss / skewed mouth]。'+ line_mark +'Recommended clinic:[Neurology]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message)) 
             rig_dept='掛號神經內科'
             Rig_Option.Ask(uid,rig_dept)
@@ -874,7 +822,7 @@ def handle_message(event):
         elif  user_message == 'H18' : 
             s2='H18'
             KMSH_UserDB_Con.set_s2(uid,s2)
-            H1_sym_message='您先前已選症狀:\n[H1:頭痛/頭暈/頭沉重]、\n[H18:失眠/焦慮/抑鬱/恐慌/生氣]。'+ line_mark +'建議看診科別:[精神科]'
+            H1_sym_message='Your current symptom:\n[H1:Headache / dizziness / heavy head]、\n[H18:Insomnia / anxiety / depression / fear / anger]。'+ line_mark +'Recommended clinic:[Psychiatry]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message)) 
             rig_dept='掛號精神科'
             Rig_Option.Ask(uid,rig_dept)
@@ -885,7 +833,7 @@ def handle_message(event):
         elif  user_message == 'H19' : 
             s2='H19'
             KMSH_UserDB_Con.set_s2(uid,s2)
-            H1_sym_message='您先前已選症狀:\n[H2:吞嚥進食困難]、\n[H19:上腹痛/腹脹/嘔吐]。'+ line_mark +'建議看診科別:[胃腸內科]'
+            H1_sym_message='Your current symptom:\n[H2:Difficulty swallowing and eating]、\n[H19:Epigastric pain / bloating/ vomiting]。'+ line_mark +'Recommended clinic:[Gastroenterology]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message)) 
             rig_dept='掛號胃腸內科'
             Rig_Option.Ask(uid,rig_dept)
@@ -895,7 +843,7 @@ def handle_message(event):
         elif  user_message == 'H20' : 
             s2='H20'
             KMSH_UserDB_Con.set_s2(uid,s2)
-            H1_sym_message='您先前已選症狀:\n[H2:吞嚥進食困難]、\n[H20:胸口灼熱]。'+ line_mark +'建議看診科別:[胃腸內科]'
+            H1_sym_message='Your current symptom:\n[H2:Difficulty swallowing and eating]、\n[H20:Burning chest]。'+ line_mark +'Recommended clinic:[Gastroenterology]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message)) 
             rig_dept='掛號胃腸內科'
             Rig_Option.Ask(uid,rig_dept)
@@ -905,7 +853,7 @@ def handle_message(event):
         elif  user_message == 'H21' : 
             s2='H21'
             KMSH_UserDB_Con.set_s2(uid,s2)
-            H1_sym_message='您先前已選症狀:\n[H2:吞嚥進食困難]、\n[H21:頸部痠痛麻/無力/緊繃]。'+ line_mark +'建議看診科別:[復健科]'
+            H1_sym_message='Your current symptom:\n[H2:Difficulty swallowing and eating]、\n[H21:Neck pain / numbness / tightness]。'+ line_mark +'Recommended clinic:[Rehabilitation]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message)) 
             rig_dept='掛號復健科'
             Rig_Option.Ask(uid,rig_dept)
@@ -919,7 +867,7 @@ def handle_message(event):
         elif  user_message == 'N1' : 
             s1='N1'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[N1:後頸頭痛/頭部撞擊]。'+ line_mark +'建議看診科別:[腦神經外科]'
+            H1_sym_message='Your current symptom:\n[N1:Head impact / back of neck pain]。'+ line_mark +'Recommended clinic:[Neurosurgery]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message)) 
             rig_dept='掛號腦神經外科'
             Rig_Option.Ask(uid,rig_dept)
@@ -929,42 +877,15 @@ def handle_message(event):
         elif  user_message == 'N2' : 
             s1='N2'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[N2:頸部變形/疼痛/麻木]。'+ line_mark +'建議看診科別:[骨科]'
-            line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message)) 
-            reg_info = TemplateSendMessage(
-                alt_text='看診建議掛號科別:',
-                template = ButtonsTemplate(                    
-                    title='看診建議掛號科別:',
-                    text= '[耳鼻喉科/牙科]',
-                    actions= [
-                        MessageTemplateAction(
-                            label= '掛號骨科A',
-                            text='掛號骨科A'
-                            ),
-                        MessageTemplateAction(
-                            label= '掛號骨科B',
-                            text='掛號骨科B'
-                            ),
-                        MessageTemplateAction(
-                            label= 'Continue',
-                            text= 'Medical Department Recommendation'
-                            ),
-                        MessageTemplateAction(
-                            label= 'Leave consultation advice',
-                            text= 'Leave the Medical Department'
-                            ),
-                        
-                    ]
-                )
-            )           
-            line_bot_api.push_message(uid, reg_info)                                   
+            H1_sym_message='Your current symptom:\n[N2:Neck deformation / pain / numbness]。'+ line_mark +'Recommended clinic:[Orthopedics]'
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             lang ='中'
             KMSH_UserDB_Con.dis_trmode(uid,lang)  #取消看診模式，回到一般查詢模式(門診掛號功能)
             
         elif  user_message == 'N3' : 
             s1='N3'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[N3:頸部腫塊]。'+ line_mark +'建議看診科別:[耳鼻喉科]'
+            H1_sym_message='Your current symptom:\n[N3:Neck lump ]。'+ line_mark +'Recommended clinic:[ENT Dept.]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message)) 
             rig_dept='掛號耳鼻喉科'
             Rig_Option.Ask(uid,rig_dept)
@@ -972,112 +893,119 @@ def handle_message(event):
             KMSH_UserDB_Con.dis_trmode(uid,lang)  #取消看診模式，回到一般查詢模式(門診掛號功能)            
 ################################# 上腹部症狀 ###################################                  
         elif  user_message.find('Upper Abdomen Symptoms') != -1:
-            sym_message = TemplateSendMessage(
-                alt_text='Upper Abdomen Symptoms',
-                template=CarouselTemplate(
-                    columns=[
-    # -----------------------------------------------------------------------------                    
-                        CarouselColumn(                            
-                            title='Upper Abdomen Symptoms Menu-1/2',
-                            text='Please select the symptoms you currently have, such as :  ',
-                            actions=[
-                                MessageTemplateAction(
-                                    label='上腹部疼痛',
-                                    text='U1'
-                                ),
-                                MessageTemplateAction(
-                                    label='胸痛/胸悶/喘/咳嗽',
-                                    text='U2'
-                                ),
-                               MessageTemplateAction(
-                                    label='活動不良/身體部位萎縮',
-                                    text='U3'
-                                )                            
-                            ]
-                        ),
-    # -----------------------------------------------------------------------------                    
-                        CarouselColumn(                            
-                            title='Upper Abdomen Symptoms Menu-2/2',
-                            text='Please select the symptoms you currently have, such as :  ',
-                            actions=[
-                                MessageTemplateAction(
-                                    label='身體部位部位變形/疼痛/無力',
-                                    text='U4'
-                                ),
-                                MessageTemplateAction(
-                                    label='心悸/雙手抖動/眼凸/口渴/多吃',
-                                    text='U5'
-                                ),
-                               MessageTemplateAction(
-                                    label='頸部變形/疼痛/麻木',
-                                    text='U6'
-                                )                            
-                            ]
-                        ),                        
-   #----------------------------------------------------------------------------                 
-                    ]
-                )
-            )            
-            line_bot_api.reply_message(event.reply_token,sym_message)            
+            sym_message = ImagemapSendMessage(
+                base_url='https://lh3.googleusercontent.com/fife/AAbDypAtSd5Q-p65CtrZ8WR78vD1AIchkplM3sHnkUQfkFVjEvKO5WyXifYEpzXfQRDopsP24RaUypw6JjxaKUn7mjN3_kxuBtdTzFH-uxYQDYuhexNfJJN2rlWQiQYm1pIpDTd_4kXQY8pKtBjnS0r0FIGe-LZlVE2yLELXA4Al1_QNjYN81zbKxdrK3B5K9fNX1Y_dlabbQzlCYcDiNCXmLHP5kXODmxs1fOqyDyr8N86n_aknCySTQcedieV-CLEGWqPc5lO9jidUF8gs2vYl4xDEaF0gUHJI4xGlrUvl4shdefYKrJ348un5WeQpnnYnSspPHNAoGy03543_DsULtFdYdCw39wC9-P3h1HufpTOhSCCD2NovvTvPNMK09h6gBxPkPuOcx8Dc23PEdqbA1a7JeWt0Eq6MLqp6omN-ZzNjMWIb8vUp6SGO3NneHDRBiZdFCPXmnirimm2cos03I4tom_TtOPPP21FHXBLdJpTw8BRovHg_Qk-8h6-QCnQedMid0sbCViN8j6oTcrIZFuLfw0mhK5DZf1XhqqckVQut3jpm64KTIDtr-3Rms-Hk9bgsLSMEx03q4_7iGl66YdnkVC9L3n7Rz3LmTsqJLBdcjjwRUFJajm2x-RgOlyMED4oo-mT4-QGQbAZeVOUuk-63DMPCLiBmc-l9NDSz81IQykH3I9qeta-W1osKGdCLlrY1iw3jlHJFbzUdr_S4jDcUk-uL9Ki5aO4KNFS_TRA1bZr-p3yxdBgwk_j93W_xh2xtl1glphyTJneqsvJ51VtxNhdNt94M0HDHkJceWF9qmQ8SY1S-1u-fdb_7k3mwarPVr8M6haUWVgKbLgZfA6veSwMpSKo0X_SqmHlzWaSOJaSjupzJTTgAJEf9ezJPKxoeciKpuZGb4js61rKKis5PRstKsVYvmQRtIl8hIXEzNL73aGimeDKt6G_BXJGM-BmIU42gkVw6CVW_rx15rSvWKI_DOkjpGUHRNDz1n11BlYA_NSluAf41plOZKgqT20FuKoCKjye0wJvsY065Ibt19NjdzHHZw2XV1-Q_mxPu28CkXxsxEpaQM3JSl88l7zYLKbUfy8F-dhz-bWr4U6mLE_KADBx3cDZ9Fzmq8SbIlAPCpU9hp8jgXrjnD06BpjQHjQdp7AirWhwe3gzE9Zd2w5ZkGlGGFNKsPVGV8ZFsSKwMSGUcRX1ShQtfVwzccSHCIv2uacWP11wJnOFyFZ-SD251r_BhPdH2eJz_-l0YpF4ZUq0jvDKXscKiXast2YgUmRrQ_bKGM0rsKDQ-iLqPBbi2QRftQ4nspNboZA=w1600-h1600?authuser=0',
+                alt_text='imagemap',
+                base_size=BaseSize(height=700, width=1200),
+                actions=[
+                    MessageImagemapAction(
+                        text='U1',
+                        area=ImagemapArea(
+                            x=0, y=120, width=600, height=120
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='U2',
+                        area=ImagemapArea(
+                            x=0, y=240, width=600, height=150
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='U3',
+                        area=ImagemapArea(
+                            x=0, y=510, width=600, height=150
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='U4',
+                        area=ImagemapArea(
+                            x=600, y=120, width=600, height=150
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='U5',
+                        area=ImagemapArea(
+                            x=600, y=270, width=600, height=150
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='U6',
+                        area=ImagemapArea(
+                            x=600, y=510, width=600, height=150
+                        )
+                    )
+                ]
+            )
+            # line_bot_api.reply_message(event.reply_token,clinic_message)
+            line_bot_api.push_message(uid, sym_message)
+            return 0
 #-----------------------------------------------------------------------------            
         elif  user_message =='U1':
             s1='U1'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            responese_info='先前已選四肢症狀:[上腹部疼痛]'
-            line_bot_api.reply_message(event.reply_token,TextSendMessage(responese_info))             
-            sym_message = TemplateSendMessage(
-                alt_text='上腹部症狀-2',
-                template=ButtonsTemplate(                                                
-                        title='其他部位症狀選單',
-                        text='Please select the symptoms you currently have, such as :  ',
-                        actions=[
-                            MessageTemplateAction(
-                                label='黃疸',
-                                text='U7'
-                            ),
-                            MessageTemplateAction(
-                                label='下腹部痛/腹瀉/便秘/嘔吐',
-                                text='U8'
-                            ),
-                            MessageTemplateAction(
-                                label='腹脹/胸口灼熱/黑便或血便',
-                                text='U9'
-                            ),
-                                                       
-                        ]
-                )
-            )            
-            line_bot_api.push_message(uid, sym_message)           
+            responese_info='Your current symptom:\n[Upper abdominal pain]'
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(responese_info))
+            sym_message = ImagemapSendMessage(
+                base_url='https://lh3.googleusercontent.com/fife/AAbDypCom08i0PvyT5Cuzf2-SJR6pur29IyY95_8YOc0zE-r6LpHGAUxHinS6uHKVGicuHqVXJM-j1z7kc1zyH1cD6OHKLrV6CZsMM8R9jjL8YDplJ2hSMq1kReAoHFkQOzo0SHxJ8DzHW-2sQOBbXHLINnDfUkB3jZi4lkjQ0YusI_Bo7PL8fc_QlmV0g0RrOn-WNR-U6uML6SmCAQBfqtzTJekSNTjyV4OZyU7SWFE--a2mUcejqtRy-tADOs4f-aveN2Vx5Jg0Fr-wJEZPbWIt8zRJzYX2PzQl4fbMEbLjFOePCMHds_FiQR2vpZml3bT4MxICIi_DTj7kr-PUSgZ9EHa8D-yrNBaG3DrKiXpS0bPJHGRC-Yl75EhJY2ZyOjUQYZ__IwH5a6_jpeh20WYTRq3Wy6ybghV69_yQrxNKLDykmTdUdTeYYBLLWlNQ7sQR7GJqsjULcDL7OOVlWjrP646chLQf4Jxc-d_qCDAyj_VYJ5N4Eo6cQa8YBvtqsClgDny6pVLlasNMTMIWRDnc24ZccR3_Zy9kHLmuM2FBvSyzQskAgsRn-mb4dGDgrZl0CyvABertfmmYfkmW92eb9xMjC8J-NnaUwki5qPVf_xZeWm7SYgU3NJXieb6p8RsJ8J1ZzORyxgQtYJqeKsCxhFqBdCin125QAfX923idB50hlVNVRvEdsyiGNP3WoRd2b3z7revSZ1u08G3VkQoqzaoJKFFmgPxZuDa24aLWu7TxpQX22yJv5FGCV5CJjLR0boHpbBbScZ-aio35FnnPECyu8M30uTQvUPaCzrcV_9FmdTQG5PJPO42b67djluQfUrnlXOULPAU8YEnsdEAA2MlyWCJi_V-CutLul95HH6YSzmPAOO1poTIHhJeYcyO4x-qn3bsBP4-r-uiV8b6HKZhF_LaQYymItf1iqQQ7KI9bktoTV_3dF375N7Gy64aC4DJsfhqJosF6_Br4zLqi5RhZe41tLqDk92bWSL96bCmhAvIpuiu1pIkg2RYT0hijORmmvKkPiWr4FU89yX69JXsFvIOC9B0iQp_5ky2CqV2x9V_P7OdiQT5oZjtoyX2R4aIcs1Q7kvr-OuQkGjzXBljQLRzOEpd6l1NF7VB7-gE9oZpTasiVupBGIXjMuXrVBrY1YjnaKr66Xut8DZO22GOBOunGiIoNGejLp1RcYZ3GvYPaJz2MPl2Bq2w7IWQyC1JU-NRjSjLYP8HrQsDsS8GDgr3-6pXALS5_jTA5s_v0feXkN86axFtiWKHaJIr9R_J_NqxtyB5sAw5cIs9b0Y819etJWCN21f90Zp0LX1vzA=w1600-h1600?authuser=0',
+                alt_text='imagemap',
+                base_size=BaseSize(height=700, width=1200),
+                actions=[
+                    MessageImagemapAction(
+                        text='U7',
+                        area=ImagemapArea(
+                            x=230, y=140, width=600, height=150
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='U8',
+                        area=ImagemapArea(
+                            x=230, y=290, width=600, height=120
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='U9',
+                        area=ImagemapArea(
+                            x=230, y=500, width=600, height=150
+                        )
+                    )
+                ]
+            )
+            # line_bot_api.reply_message(event.reply_token,clinic_message)
+            line_bot_api.push_message(uid, sym_message)
+            return 0
 #-----------------------------------------------------------------------------            
         elif  user_message == 'U2':
             s1='U2'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            responese_info='先前已選四肢症狀:[胸痛/胸悶/喘/咳嗽]'
-            line_bot_api.reply_message(event.reply_token,TextSendMessage(responese_info))            
-            sym_message = TemplateSendMessage(
-                alt_text='上腹部症狀-3',
-                template=ButtonsTemplate(                                                
-                        title='其他部位症狀選單',
-                        text='Please select the symptoms you currently have, such as :  ',
-                        actions=[
-                            MessageTemplateAction(
-                                label='發燒/咳嗽有痰',
-                                text='U10'
-                            ),
-                            MessageTemplateAction(
-                                label='血壓高/暈倒/心悸',
-                                text='U11'
-                            ),                                
-                                                                                                                                 
-                        ]
-                  )
-            )            
-            line_bot_api.push_message(uid, sym_message)  
+            responese_info='Your current symptom:\n[Chest pain / Chest tightness / Wheezing / Coughing]'
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(responese_info))
+            sym_message = ImagemapSendMessage(
+                base_url='https://lh3.googleusercontent.com/fife/AAbDypDjDtuvpJBxIRnTUSeGXScQ_WbXkLVYWdzOno-NyhD64BO2a6tL6hjfq2YScFh5YU44nfEHdZiqCcJE3Nx3Rir86pKe5cjwBP8kSA5mR-GmEIPYWaDhGtmC8sI1IraEi4BRtZsRaiZ5AUBS7fJZEkeb7MPqaU9uzcAzVDdhOwSn6HIEpkYQWrPhJuVTA1y6OpksROy6HnUu2eXqvZbose_wLUSSwyg23naSGp6s2iT1fiQ4wGATAAZmaM__GbAJ93oCQ5JIks7ldm5cSsILVCKl8rXvUEhZmmf0yMBL0mO4r4UqlWqpWa9nrhesYMrZUThlSJJxnS5cV9Qo2MquVjXNo-VQId5qqL_ehTAjuKFoktVhLUZ90un4HLQ0KdlJslX7OwcX0NlByBOtEPfTFGGWeecXGC3UFSTQbJmWlZg005yps1Mpe3UxwLvsynkG7wCjpfW56TDUcCOYj1AhWtMak7d6HgfE6R4DSK1DylkVV6CDdjKrJ3m4Y0GhxPF0upotiooHtqoo-y4WStn6H8JlvJqY3JRg5TTWiRLlEWNw2oGnWKu8aCCy5RyobYBtbJgAnepN1iAKS0lUoe1SMQGhgp_YQpj-gBOFwZ1dfrjzVDH12JddjcwK6CAjLoDKCJ4yNjF3Q1OD6TsmdD8Ht6iwTV9bPqVvvxMPE5LmnQa4QxT_FriFrk2y2TZUmZio8u03kG4G_g4UTE72J5UsIxvHS0bEEiJ4JsunncdItutyjiOq-VimfoqZyQ1_SspwfWfeYOXBW1AI2GXV7UHEbhpogwc1t5oyBOqp4bJgW7dRhOa56a2geeTbJIuVSikmpLwKCdd2e3b10g1cFCzhYu5iDXgACMJ7swEfHQr1QJ_7RKlZctMwEwI1fr7YX0IwsuSRT6GSaPYi3AyrFgWGeNM957GILaetZJX377vKtivx0gvdmb3ne03WE2ZAEixNA1KZLsv-z8jett8fUHebet5H-P5SZQER8-4qm-HvZ_06QeOEqYONE3NRTKXZGD8sopn1mcEJJqYVXYM44STLs2jQF5iHgd1KSK8h2INYd-yqyMN2OlMF4FpYHWOItO-meXhrEkPu-7_b20jYw2JCDm3FoiL5Y1ydyAc1lujhEDaGODTFiIRrEQ7VjNPXhhOJKIuyYkApDFrw_-hDBafglplBCIz7T06BGcuRxx2yTKCmPmthcSJMCExnZVN9dKpSRV4yszPd1MNXP1E9krv8Uq3EG17lGeX62aiab6vqYQSBrW5uEP1rf4qg8m3sCxECPuTeDtZ__5C3pGKmL7JWmOnXg1fYun9nhAhGcBwfsQ=w1600-h1600?authuser=0',
+                alt_text='imagemap',
+                base_size=BaseSize(height=700, width=1200),
+                actions=[
+                    MessageImagemapAction(
+                        text='U10',
+                        area=ImagemapArea(
+                            x=230, y=160, width=600, height=120
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='U11',
+                        area=ImagemapArea(
+                            x=230, y=400, width=600, height=150
+                        )
+                    )
+                ]
+            )
+            # line_bot_api.reply_message(event.reply_token,clinic_message)
+            line_bot_api.push_message(uid, sym_message)
+            return 0
 #----------------------------------------------------------------------------            
         elif  user_message.find('U3') != -1:
             s1='U3'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[U3:活動不良/身體部位萎縮]。'+ line_mark +'建議看診科別:[骨科]'
+            H1_sym_message='Your current symptom:\n[U3:Poor mobility / shrinking of body parts]。'+ line_mark +'Recommended clinic:[Orthopedics]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號骨科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1086,7 +1014,7 @@ def handle_message(event):
         elif  user_message.find('U4') != -1:
             s1='U4'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[U4:身體部位部位變形/疼痛/無力]。'+ line_mark +'建議看診科別:[骨科]'
+            H1_sym_message='Your current symptom:\n[U4:Deformation / Pain / Weakness of body]。'+ line_mark +'Recommended clinic:[Orthopedics]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號骨科A'
             Rig_Option.Ask(uid,rig_dept)
@@ -1095,7 +1023,7 @@ def handle_message(event):
         elif  user_message.find('U5') != -1:
             s1='U5'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[U5:心悸/雙手抖動/眼凸/口渴/多吃]。'+ line_mark +'建議看診科別:[內分泌科]'
+            H1_sym_message='Your current symptom:\n[U5:Palpitations / Shaking hands / Bulging eyes / Thirst / Eating more]。'+ line_mark +'Recommended clinic:[Endocrinology and Metabolism]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號內分泌科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1104,7 +1032,7 @@ def handle_message(event):
         elif  user_message.find('U6') != -1:
             s1='U6'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[U6:頸部變形/疼痛/麻木]。'+ line_mark +'建議看診科別:[骨科]'
+            H1_sym_message='Your current symptom:\n[U6:Neck deformity / Pain / Numbness]。'+ line_mark +'Recommended clinic:[Orthopedics]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號骨科A'
             Rig_Option.Ask(uid,rig_dept)
@@ -1113,7 +1041,7 @@ def handle_message(event):
         elif  user_message.find('U7') != -1:
             s2='U7'
             KMSH_UserDB_Con.set_s2(uid,s2)
-            H1_sym_message='您先前已選症狀:\n[U1:上腹部疼痛]、\n[U7:黃疸]。'+ line_mark +'建議看診科別:[肝膽胰內科]'
+            H1_sym_message='Your current symptom:\n[U1:Upper abdominal pain]、\n[U7:Jaundice]。'+ line_mark +'Recommended clinic:[Hepatic-biliary-pancreatic Medicine]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號肝膽胰內科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1122,7 +1050,7 @@ def handle_message(event):
         elif  user_message.find('U8') != -1:
             s2='U8'
             KMSH_UserDB_Con.set_s2(uid,s2)
-            H1_sym_message='您先前已選症狀:\n[U1:上腹部疼痛]、\n[U8:下腹部痛/腹瀉/便秘/嘔吐]。'+ line_mark +'建議看診科別:[胃腸內科]'
+            H1_sym_message='Your current symptom:\n[U1:Upper abdominal pain]、\n[U8:Lower abdominal pain / diarrhea / constipation / vomiting]。'+ line_mark +'Recommended clinic:[Gastroenterology]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號胃腸內科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1131,7 +1059,7 @@ def handle_message(event):
         elif  user_message.find('U9') != -1:
             s2='U9'
             KMSH_UserDB_Con.set_s2(uid,s2)
-            H1_sym_message='您先前已選症狀:\n[U1:上腹部疼痛]、\n[U9:腹脹/胸口灼熱/黑便或血便]。'+ line_mark +'建議看診科別:[胃腸內科]'
+            H1_sym_message='Your current symptom:\n[U1:Upper abdominal pain]、\n[U9:Abdominal distension / chest burning sensation / black stool or bloody stool]。'+ line_mark +'Recommended clinic:[Gastroenterology]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號胃腸內科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1140,7 +1068,7 @@ def handle_message(event):
         elif  user_message.find('U10') != -1:
             s2='U10'
             KMSH_UserDB_Con.set_s2(uid,s2)
-            H1_sym_message='您先前已選症狀:\n[U2:胸痛/胸悶/喘/咳嗽]、\n[U10:發燒/咳嗽有痰]。'+ line_mark +'建議看診科別:[胸腔內科]'
+            H1_sym_message='Your current symptom:\n[U2:Chest pain / Chest tightness / Wheezing / Coughing]、\n[U10:Fever / cough with sputum]。'+ line_mark +'Recommended clinic:[Pulmonary Medicine]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號胸腔內科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1149,7 +1077,7 @@ def handle_message(event):
         elif  user_message.find('U11') != -1:
             s2='U11'
             KMSH_UserDB_Con.set_s2(uid,s2)
-            H1_sym_message='您先前已選症狀:\n[U2:胸痛/胸悶/喘/咳嗽]、\n[U11:血壓高/暈倒/心悸]。'+ line_mark +'建議看診科別:[心臟內科]'
+            H1_sym_message='Your current symptom:\n[U2:Chest pain / chest tightness / wheezing / coughing]、\n[U11:High blood pressure / fainting / palpitations]。'+ line_mark +'Recommended clinic:[Cardiology]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號心臟內科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1157,58 +1085,57 @@ def handle_message(event):
             KMSH_UserDB_Con.dis_trmode(uid,lang)  #取消看診模式，回到一般查詢模式(門診掛號功能)               
 ############################### 下腹部症狀 ###################################
         elif  user_message.find('Lower Abdomen Symptoms') != -1:
-            sym_message = TemplateSendMessage(
-                alt_text='Lower Abdomen Symptoms',
-                template=CarouselTemplate(
-                    columns=[
-    # -----------------------------------------------------------------------------                    
-                        CarouselColumn(                            
-                            title='Lower Abdomen Symptoms Menu-1/2',
-                            text='Please select the symptoms you currently have, such as :  ',
-                            actions=[
-                                MessageTemplateAction(
-                                    label='下腹部疼痛/腹瀉/便秘',
-                                    text='L1'
-                                ),
-                                MessageTemplateAction(
-                                    label='泡泡尿/尿量減少',
-                                    text='L2'
-                                ),
-                               MessageTemplateAction(
-                                    label='陰道搔癢/分泌物多/陰道出血/經血過多',
-                                    text='L3'
-                                )                            
-                            ]
-                        ),
-    # -----------------------------------------------------------------------------                    
-                        CarouselColumn(                            
-                            title='Lower Abdomen Symptoms Menu-2/2',
-                            text='Please select the symptoms you currently have, such as :  ',
-                            actions=[
-                                MessageTemplateAction(
-                                    label='腰痛下背痛/血尿/頻尿/小便疼痛',
-                                    text='L4'
-                                ),
-                                MessageTemplateAction(
-                                    label='活動不良/萎縮變形/疼痛無力',
-                                    text='L5'
-                                ),
-                               MessageTemplateAction(
-                                    label='下腹部痠痛麻/無力/緊繃',
-                                    text='L6'
-                                )                            
-                            ]
-                        ),                        
-   #----------------------------------------------------------------------------                 
-                    ]
-                )
-            )            
-            line_bot_api.reply_message(event.reply_token,sym_message) 
+            sym_message = ImagemapSendMessage(
+                base_url='https://lh3.googleusercontent.com/fife/AAbDypBHEs0ZExTi7P8KpVmk4MqLoO9AkL6ffqgwUAlNqZHLVccb-X1fD5Q_tAbXArBpwKQ4Uep91E9GQS8GkaUOMJ8HIvbhJRWIbm7Foa8SYgQPOHbq3kPqPJfGdUAwF_JFQR8lv5AmUk8uPTBJ01yo9Gxx10q5dTBPlX9jas7YHdpmh6g9k6L8QQ4t7BikjxHQUVmAKZm0mN13Q6vH4_POrsxnv8EqxSig2W9Gb62gHybtSKLXFae-L_yPIceH4Gaa7tkzPQ3QGVOz3w6uezeEJSSocgMDKXh6U80K8CAnVkFiVFA8-D939cl4X_e44-Q9fLk_74qdj6z7IZ3xLzq9aXIMOeJ62ugtBqnJ6cl83zrDcY7Vyj0Bf7-hueISOQhQcyVr7VZUfQ1W1XTOF-UiY3xzlQmGrsXg7oKQPh3Tagfs1Hs_ThDUmMlBE_stLz1ff968MT0s4EkWQwWRUfaZIn4zYiex7Ljmf5LjxV0iZro-O1I5-ISPpqasXduAd5vtKEm5OKMcIG7D8ERfO9lPlQCgDNZKpCC8SU8RCQQBZE98ASKJV7Ibly_nfi9mV64w3i7VEyF-jLJycL3gADRQtQ0mBP4tvCskqXLYg5spHJ-wm9Y_aUrRyDykY7cpWl5PCCj2cxTVQo9u3AR11v3duSXu0S1tsc_4Slg6pyvIYuLTqbB3Zh8D_n-iX0o2bXk31dKNPM5PtzJeNvHFFOvx2MPmjdLSHfKsiPfnHdtNtghhBmlfl5FhG_Pb_b6NnuTimA-dwbthHoAZ93iCTSb61hLG3rZXwB0jAB1Zyd4zaJ6gT3g9OvU4yuFzc4edVhoxpFx0gX3zmeY9zkDps09pqKGs712R7Xpxh7hAwb1jOY8czMk7UAQIZC8WohiZV0ypN5kmLQ2r2qgPyryBRF86ZCJb4EESZLBaOfdX91XvjPYa7zM184AtawaXu9yFALDo-2W1dnAuYM2rHIbqgWqVxBwDQacHZuy594ZOhNbHnWt_L0jXnsulsOHv-8TGqBQenkrkPE_-lRfq7ZGy6-7NBe5bmol3dxwOIV3wnPfZh5w70-i1c0s5KBeyXBhu-Epj9zemjbyWqD3GQmz3G-5-9fqPUKDcJ3QTQRCuB_isoJZwPaRAv_vTtOe-r28Xts8xJamklX5OHwcmjv5o4VC7VGnXW9WYWKBdEKxjdWJ1KBZESJftLv06NhgtNPMg4oy_66dIFQcODSqsD4Box0ou-lcCrscEHmMPyhw4YdzA4CUExwis51ndFPV7LGgN3WKM4ss97FnDJg3qnLTh2zzDFZfB5WojeeBeVypUfOKTgA=w1600-h1600?authuser=0',
+                alt_text='imagemap',
+                base_size=BaseSize(height=700, width=1200),
+                actions=[
+                    MessageImagemapAction(
+                        text='L1',
+                        area=ImagemapArea(
+                            x=0, y=120, width=600, height=150
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='L2',
+                        area=ImagemapArea(
+                            x=0, y=270, width=600, height=150
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='L3',
+                        area=ImagemapArea(
+                            x=0, y=420, width=600, height=150
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='L4',
+                        area=ImagemapArea(
+                            x=600, y=120, width=600, height=150
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='L5',
+                        area=ImagemapArea(
+                            x=600, y=270, width=600, height=150
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='L6',
+                        area=ImagemapArea(
+                            x=600, y=420, width=600, height=150
+                        )
+                    )
+                ]
+            )
+            # line_bot_api.reply_message(event.reply_token,clinic_message)
+            line_bot_api.push_message(uid, sym_message)
+            return 0
 #----------------------------------------------------------------------------            
         elif  user_message =='L1':
             s1='L1'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[L1:下腹部疼痛/腹瀉/便秘]。'+ line_mark +'建議看診科別:[胃腸內科]'
+            H1_sym_message='Your current symptom:\n[L1:Lower abdominal pain / Diarrhea / Constipation ]。'+ line_mark +'Recommended clinic:[Gastroenterology]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號胃腸內科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1217,7 +1144,7 @@ def handle_message(event):
         elif  user_message =='L2':
             s1='L2'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[L2:泡泡尿/尿量減少]。'+ line_mark +'建議看診科別:[腎臟內科]'
+            H1_sym_message='Your current symptom:\n[L2:Bubble in urine / Decreased urine output]。'+ line_mark +'Recommended clinic:[Nephrology]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號腎臟內科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1226,7 +1153,7 @@ def handle_message(event):
         elif  user_message =='L3':
             s1='L3'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[L3:陰道搔癢/分泌物多/陰道出血/經血過多]。'+ line_mark +'建議看診科別:[婦產科]'
+            H1_sym_message='Your current symptom:\n[L3:Vaginal itch / Excessive vaginal discharge / Vaginal bleeding]。'+ line_mark +'Recommended clinic:[Obstetrics and Gynecology]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號婦產科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1235,7 +1162,7 @@ def handle_message(event):
         elif  user_message =='L4':
             s1='L4'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[L4:腰痛下背痛/血尿/頻尿/小便疼痛]。'+ line_mark +'建議看診科別:[泌尿科]'
+            H1_sym_message='Your current symptom:\n[L4:Lower back pain / Hematuria / Frequent urination / Painful urination]。'+ line_mark +'Recommended clinic:[Urology]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號泌尿科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1244,7 +1171,7 @@ def handle_message(event):
         elif  user_message =='L5':
             s1='L5'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[L5:活動不良/萎縮變形/疼痛無力]。'+ line_mark +'建議看診科別:[骨科]'
+            H1_sym_message='Your current symptom:\n[L5:Reduced mobility / Atrophy and deformation / Pain and weakness]。'+ line_mark +'Recommended clinic:[Orthopedics]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號骨科A'
             Rig_Option.Ask(uid,rig_dept)
@@ -1253,7 +1180,7 @@ def handle_message(event):
         elif  user_message =='L6':
             s1='L6'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[L6:下腹部痠痛麻/無力/緊繃]。'+ line_mark +'建議看診科別:[復健科]'
+            H1_sym_message='Your current symptom:\n[L6:Lower abdomen numbness / Weakness / Tightness]。'+ line_mark +'Recommended clinic:[Rehabilitation]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號復健科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1262,68 +1189,50 @@ def handle_message(event):
 
 ############################### 四肢症狀 ###################################
         elif  user_message.find('Symptoms of Limbs') != -1:
-            sym_message = TemplateSendMessage(
-                alt_text='Symptoms of Limbs',
-                template = ButtonsTemplate(                                               
-                            title='Symptoms of Limbs Menu',
-                            text='Please select the symptoms you currently have, such as :  ',
-                            actions=[
-                                MessageTemplateAction(
-                                    label='小腿水腫/腳腫',
-                                    text='LB1'
-                                ),
-                                MessageTemplateAction(
-                                    label='行走困難/麻痺無力/痠痛',
-                                    text='LB2'
-                                ),                                                            
-                                MessageTemplateAction(
-                                    label='四肢痠痛麻/無力/緊繃',
-                                    text='LB3'
-                                ),
-                                MessageTemplateAction(
-                                    label='指甲問題',
-                                    text='LB4'
-                                ),                                                          
-                            ]
-                        )                        
-                    
-                )    
-            line_bot_api.reply_message(event.reply_token,sym_message) 
+            sym_message = ImagemapSendMessage(
+                base_url='https://lh3.googleusercontent.com/fife/AAbDypCl5DJytBeGDjCFkJQfzcSP-msb5Rhp5Aoqpyc46yzrVJZnka9asEhwl5rYrjhFOBr68qN7jUr36jB4UNB8Bm0y7iJ9o010qhFZRUImvmHFPgAND7ZpKFioMVtNYGn9tiJpPBVx29GpvTfd3DnI6D-eQ42I5svGnZIGYTRJ_NAxhtZyJVQ3IeqVlIC-5ELYXpnlgCKsYKAe86tW0Kx4RzGHkG3hQ85vqbOoORg9Aet5Y4dJQnU8nZ9yGW0MLZb5i_g5rhtmCYLR89zO2E4bZMaCMLmNJ9LpcXy5vODjlE5oqeo56drKoNeq9YWa6k-wnXb7sDCxdcaKqpetby-zGSlXYrCV6Nzc7OL8JAsqkzeXxr9kEyhH_XiD5CNGASFbY5DwLDnriLwavLFFzrBWJl4YksimsgKwqzfg1Ts65h3bKcEmyZZkPI9VYd3VMAvidtKp8PPit0qTQ5FmxfAdnVIg8rH5bnzzY37kjigcv0aUl2LKQcp3A2k6Y1v5oTDmeMGnUO6sohvWEAkO9dfu3j22kqFS7gkpestX4-6tvkn457y7-52ei26Q8VDPjrwYA1mS0l2_iseOFx5FTbcRvjvBXYC5ICCi8urRjSe7Wbnda2Nsq1TL9WUqdxzJdPQFyvJyjN-HthYyyZ0sGZSzjhB9YHpp8CfJKw43nf9Yfp7iI0M3wXvQyVKV7oZOuKFGI1KgmfPlTuTiXY2aA33QFLtBhtaE_F55xrmxH0xijq3jytaBx6XzXLRvcmDPSc6GYB-AxgkJCJqzblKEAOPQIicn7nAC8y32OgqvpxElrzvbv70Cwa6hz5QMOu-MEwBfHM6ZjDT5ZRx1FAVG_YrKFGyfvQIDmiSp5Ob31iyevyopz6o2Xht3mWW0_DY54V1LGQhJK19tHNGZmitR-2LJddB7iwjZV7SyX_8PzlftCL-yrneD6lnSFGzxwIijq-WtZMYrEe3_mXvGo1bFy_Zdj2bneXiBQ6h71IK818845aICogw2yVnEqiEW6ZYjBsWMZ9XyWZ7oIZkqylW7BjptiU2GMtiaRCh5zJ2AztWVcosdT_JtSVQ8Sy1k-b_oZyTvbSGPKEa-HpI37bt93vTqrJE0A2PwVxIXbB9G86TH7yUtBi0jqNFANKLjdSdjZC-d4JNgClZ2aeLWhrcJ3aKawGgMq9LgSMgF84pfvIFnWIhbJuKZdTnhmoNfEkUqe9mw5Ltp6wMJyyEbbtU-11jdlpF7GoDKQ61hnsbkNjAsT0Fk5dl76UC_2x35_jp-07x6dzY1-I8RLxxtDM1c1ldgl6llQPVUNTUOeerePU-BVA=w1600-h1600?authuser=0',
+                alt_text='imagemap',
+                base_size=BaseSize(height=700, width=1200),
+                actions=[
+                    MessageImagemapAction(
+                        text='LB1',
+                        area=ImagemapArea(
+                            x=230, y=140, width=600, height=120
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='LB2',
+                        area=ImagemapArea(
+                            x=230, y=260, width=600, height=150
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='LB3',
+                        area=ImagemapArea(
+                            x=230, y=410, width=600, height=150
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='LB4',
+                        area=ImagemapArea(
+                            x=230, y=560, width=600, height=120
+                        )
+                    )
+                ]
+            )
+            line_bot_api.push_message(uid, sym_message)
+            return 0
    #--------------------------------------------------------------------------         
         elif  user_message=='LB1':
             s1='LB1'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            responese_info='先前已選四肢症狀:[小腿水腫/腳腫]'
-            line_bot_api.reply_message(event.reply_token,TextSendMessage(responese_info))            
-            sym_message = TemplateSendMessage(
-                alt_text='Symptoms of Limbs-2',
-                template = ButtonsTemplate(                                               
-                            title='Symptoms of Limbs-2選單',
-                            text='請選擇您其他的身體症狀群，如下:',
-                            actions=[
-                                MessageTemplateAction(
-                                    label='血壓高/暈倒',
-                                    text='LB5'
-                                ),
-                                MessageTemplateAction(
-                                    label='心悸胸痛/胸悶/喘/咳嗽',
-                                    text='LB6'
-                                ),                                                            
-                                MessageTemplateAction(
-                                    label='全身水腫/泡泡尿/尿量減少',
-                                    text='LB7'
-                                ),
-                                                                                         
-                            ]
-                        )                                            
-                )                 
-            line_bot_api.push_message(uid, sym_message)
-            
+            responese_info='Your current symptom:\n[LB1:Calf edema / Foot swelling]'
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(responese_info))
 #----------------------------------------------------------------------------            
         elif  user_message =='LB2':
             s1='LB2'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[LB2:行走困難/麻痺無力/痠痛]。'+ line_mark +'建議看診科別:[神經內科]'
+            H1_sym_message='Your current symptom:\n[LB2:Difficulty walking / Numbness / Ache]。'+ line_mark +'Recommended clinic:[Neurology]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號神經內科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1332,35 +1241,8 @@ def handle_message(event):
         elif  user_message =='LB3':
             s1='LB3'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[LB3:四肢痠痛麻/無力/緊繃]。'+ line_mark +'建議看診科別:[神經內科/復健科]'
+            H1_sym_message='Your current symptom:\n[LB3:Sore and numb limbs / Limb weakness / Tightness ]。'+ line_mark +'Recommended clinic:[Neurology / Rehabilitation]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
-            reg_info = TemplateSendMessage(
-                alt_text='看診建議掛號科別:',
-                template = ButtonsTemplate(                    
-                    title='看診建議掛號科別:',
-                    text= '[神經內科/復健科]',
-                    actions= [
-                        MessageTemplateAction(
-                            label= '掛號神經內科',
-                            text='掛號神經內科'
-                            ),
-                        MessageTemplateAction(
-                            label= '掛號復健科',
-                            text='掛號復健科'
-                            ),
-                        MessageTemplateAction(
-                            label= 'Continue',
-                            text= 'Medical Department Recommendation'
-                            ),
-                        MessageTemplateAction(
-                            label= 'Leave consultation advice',
-                            text= 'Leave the Medical Department'
-                            )
-                        
-                    ]
-                )
-            )
-            line_bot_api.push_message(uid, reg_info)
             #rig_dept='掛號復健科'
             #Rig_Option.Ask(uid,rig_dept)
             lang ='中'
@@ -1368,7 +1250,7 @@ def handle_message(event):
         elif  user_message =='LB4':
             s1='LB4'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[LB4:指甲問題]。'+ line_mark +'建議看診科別:[皮膚科]'
+            H1_sym_message='Your current symptom:\n[LB4:Problems with nails]。'+ line_mark +'Recommended clinic:[Dermatology]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號皮膚科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1377,7 +1259,7 @@ def handle_message(event):
         elif  user_message =='LB5':
             s2='LB5'
             KMSH_UserDB_Con.set_s2(uid,s2)
-            H1_sym_message='您先前已選症狀:\n[LB1:小腿水腫/腳腫]、\n[LB5:血壓高/暈倒]。'+ line_mark +'建議看診科別:[心臟內科]'
+            H1_sym_message='Your current symptom:\n[LB1:Calf edema / Foot swelling]、\n[LB5:High blood pressure / Fainting]。'+ line_mark +'Recommended clinic:[Cardiology]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號心臟內科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1386,7 +1268,7 @@ def handle_message(event):
         elif  user_message =='LB6':
             s2='LB6'
             KMSH_UserDB_Con.set_s2(uid,s2)
-            H1_sym_message='您先前已選症狀:\n[LB1:小腿水腫/腳腫]、\n[LB6:心悸胸痛/胸悶/喘/咳嗽]。'+ line_mark +'建議看診科別:[心臟內科]'
+            H1_sym_message='Your current symptom:\n[LB1:Calf edema / Foot swelling]、\n[LB6:Palpitations chest pain / Chest tightness / Wheezing / Coughing]。'+ line_mark +'Recommended clinic:[Cardiology]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號心臟內科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1395,7 +1277,7 @@ def handle_message(event):
         elif  user_message =='LB7':
             s2='LB7'
             KMSH_UserDB_Con.set_s2(uid,s2)
-            H1_sym_message='您先前已選症狀:\n[LB1:小腿水腫/腳腫]、\n[LB7:全身水腫/泡泡尿/尿量減少]。'+ line_mark +'建議看診科別:[腎臟內科]'
+            H1_sym_message='Your current symptom:\n[LB1:Calf edema / Foot swelling]、\n[LB7:Whole body edema / Bubbles in urine / Decreased urine output]。'+ line_mark +'Recommended clinic:[Nephrology]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號腎臟內科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1403,106 +1285,108 @@ def handle_message(event):
             KMSH_UserDB_Con.dis_trmode(uid,lang)  #取消看診模式，回到一般查詢模式(門診掛號功能)               
 ##############################################################################
         elif  user_message.find('General Symptoms') != -1:
-            sym_message = TemplateSendMessage(
-                alt_text='General Symptoms',
-                template=CarouselTemplate(
-                    columns=[
-    # -----------------------------------------------------------------------------                    
-                        CarouselColumn(                            
-                            title='General Symptoms Menu-1/3',
-                            text='Please select the symptoms you currently have, such as :  ',
-                            actions=[
-                                MessageTemplateAction(
-                                    label='發燒',
-                                    text='A1'
-                                ),
-                                MessageTemplateAction(
-                                    label='全身水腫/泡泡尿/尿量減少',
-                                    text='A2'
-                                ),
-                               MessageTemplateAction(
-                                    label='容易緊張/流汗/失眠',
-                                    text='A3'
-                                )                            
-                            ]
-                        ),
- # -----------------------------------------------------------------------------                    
-                        CarouselColumn(                            
-                            title='General Symptoms Menu-2/3',
-                            text='Please select the symptoms you currently have, such as :  ',
-                            actions=[
-                                MessageTemplateAction(
-                                    label='失眠/焦慮/恐慌/生氣',
-                                    text='A4'
-                                ),
-                                MessageTemplateAction(
-                                    label='青春痘/皮膚黑斑/免疫系統疾病',
-                                    text='A5'
-                                ),
-                               MessageTemplateAction(
-                                    label='皮膚傷口/皮膚癢/紅腫/緊繃',
-                                    text='A6'
-                                )                            
-                            ]
-                        ),
- # -----------------------------------------------------------------------------                    
-                        CarouselColumn(                            
-                            title='General Symptoms Menu-3/3',
-                            text='Please select the symptoms you currently have, such as :  ',
-                            actions=[
-                                MessageTemplateAction(
-                                    label='血壓高/暈倒',
-                                    text='A7'
-                                ),
-                                MessageTemplateAction(
-                                    label='黃疸',
-                                    text='A8'
-                                ),
-                               MessageTemplateAction(
-                                    label='身體痠痛麻/無力/緊繃',
-                                    text='A9'
-                                )                            
-                            ]
-                        ),                        
-   #----------------------------------------------------------------------------                 
-                    ]
-                )
-            )            
-            line_bot_api.reply_message(event.reply_token,sym_message)            
+            sym_message = ImagemapSendMessage(
+                base_url='https://lh3.googleusercontent.com/fife/AAbDypCl4d2VvGBRdUo2NZrQD-7RuWjAb-EvLPiCdzdQTtav04uogvAD7sNvNcSoh3wXbRDDP-MZIbq_2_G1rufCz1CkiKHF_oYeXJ8a96K6AzSE4_MLalTvItiOofiW-Snz1qfrO3HhFDVEiN7XQZpDy0UJpIs2ISGu67P4wRPvhGeXTaPQZSKpafau3SELw1QJTsrmMyEw66NRJoVeU8owucFoATMLfqGVRQbbc7oF3_QpxfcIGOrmkwzSkUwgXUn-4XXtMWXlsheR8iyTCxE3a5UY3vG-jmWDVU-vzUR5FPetNMIOvY8euJKVHssuALukb6tZF-GKCoxkjuwxnJ4MzlXURLk6CSwEs1XcxBg4Oh141m6ZHFF7a_JJXqkSDAbe9sSA2NC6j3lvMh_2giRvRLyJ3r860_yfnOJQXqZhnlD72tSYZ3sxxzWIK_JvI_Oz_HEG-Ei28nP6X0ARjtDAuTS4GQJ_qagI6n3apJRAiQJ5aAh0eLTDwugJjq-OVA7J18X95TRdxfoYPdMOhVZelaRPexJrtizzSYfn82arq3KmGVefIH5ZazfBqw7chW-P2hRpUfSMP1X1ybt-Ec8P2Qt5VCTQQ75fonYWcSUekzDRHvAAIgKXQeBnKQEUvvqu3YPOhH72z2sxi0N3h2TkVM3Wy4DEkQxQAvF9SD1R1qlrrUumM871LN_VA1Z9mj5hsjqSfMd1iO9wBhB8yiMHwN5bxKzx5IpiZ4b7ZRO1VN-KgR6MuqmjFsmUZJ7JzBVUfjEXhUmrOlIwvgeri7vcfcWxKqLqDEGkujMrw3OAU9_1F0uizL0oJVu6jae8qqqgqOA-jcRqzxdUPBz1IDytn9pbUq1yEw8Ntv7Hknw3lskPle5b3LItbVK4BJLfNOSOwXpto90l13U7Onc5yOpKYwsOpDc9XcMAWGt4HKDLZaRGgbqzoyAktqBnjYyfhco86TDLpIsPS3bMEJunbmebZFwSIt50gIqvv4TO9YXtLkHE7ySwVxcbnaMquV38E4JaIhSx-f2Ws3dcHPq0PRwW0KbxLTfjf9W2Pgvy5JEDbcjq82mkTqCzODoQwrdyVZCkrl0GuykSeOvpcp90vWkr8hY1kMlc6wcC33x5f-tBAth4HgocGpjg-A2MRgdVut7Di8tckfye1dOc6kc9-NYTC7XXoOLD6tKVdswKlCFCiPiFuBoOjy5DPcU-LjTSZttx-oR_qAniktjuDh8R30onbqs70Ho_x73PL6uZsdMPOFsYDfXnNXweXB2cTfM1bP4MBgHdCLeCHKHTvEWF5YR2pJBQwtyxVPT1ZuMzfX_aKQ=w1600-h1600?authuser=0',
+                alt_text='imagemap',
+                base_size=BaseSize(height=1040, width=1200),
+                actions=[
+                    MessageImagemapAction(
+                        text='A1',
+                        area=ImagemapArea(
+                            x=0, y=120, width=600, height=120
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='A2',
+                        area=ImagemapArea(
+                            x=0, y=240, width=600, height=150
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='A3',
+                        area=ImagemapArea(
+                            x=0, y=390, width=600, height=150
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='A4',
+                        area=ImagemapArea(
+                            x=0, y=540, width=600, height=120
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='A5',
+                        area=ImagemapArea(
+                            x=0, y=660, width=600, height=150
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='A6',
+                        area=ImagemapArea(
+                            x=0, y=810, width=600, height=120
+                        )
+                    ), MessageImagemapAction(
+                        text='A7',
+                        area=ImagemapArea(
+                            x=600, y=120, width=600, height=120
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='A8',
+                        area=ImagemapArea(
+                            x=600, y=240, width=600, height=120
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='A9',
+                        area=ImagemapArea(
+                            x=600, y=360, width=600, height=150
+                        )
+                    )
+                ]
+            )
+            # line_bot_api.reply_message(event.reply_token,clinic_message)
+            line_bot_api.push_message(uid, sym_message)
+            return 0
 #-----------------------------------------------------------------------------            
         elif  user_message=='A1':
             s1='A1'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            responese_info='先前已選全身症狀:[發燒]'
-            line_bot_api.reply_message(event.reply_token,TextSendMessage(responese_info))            
-            sym_message = TemplateSendMessage(
-                alt_text='全身症狀-2',
-                template = ButtonsTemplate(                                               
-                            title='全身症狀-2選單',
-                            text='請選擇您其他的身體症狀群，如下:',
-                            actions=[
-                                MessageTemplateAction(
-                                    label='胸痛悶/喘鳴聲/咳嗽有痰',
-                                    text='A10'
-                                ),
-                                MessageTemplateAction(
-                                    label='頭痛/紅疹/肌肉痠痛/關節痛',
-                                    text='A11'
-                                ),                                                            
-                                MessageTemplateAction(
-                                    label='頭痛暈/耳鳴/鼻涕/喉嚨痛',
-                                    text='A12'
-                                ),
-                                                                                         
-                            ]
-                        )                                            
-                )                 
-            line_bot_api.push_message(uid, sym_message) 
+            responese_info='Your current symptom:\n[fever]'
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(responese_info))
+            sym_message = ImagemapSendMessage(
+                base_url='https://lh3.googleusercontent.com/fife/AAbDypBLsRsEPctv5c9_LHUnBmaAf0RrosstKDScXtp5hKZWHpoyCRbTJ3dwmuM8ZfW0XYMEqf66ZI8i-6HNlXzK2JmaMWb1JTBBQVHz5tv2zciefJlHxmHtj_mCMLdfNkN7Bl5Ta3SdcZW_rHi5shmxpe8osKtnq4WmDILDO0sfiL7FVdWhg9zf_3-IAwgLATUwsfvM5uEHImG3L7SPGwlj5sqJ-7DNtoizrPA4_BY7GFAjH9rtx1xKo4kQUpmw9XoL0Xn7fwh6dawelH1h2Evv4G03TwCX4DgXTXyw-lzLy4FAbiLp1tpJLKuQjnI76EFicsvSOyRRtts5AswwM03hklTcH-1r33mKgMaTUZ7iResCj2rQVrvTN79CNVXnfBw1_GFgG18ltc31hiO_t217rM8K2rYVyTuSYcLBVuskBYhum9D-cC9uCPqncNYkC_MH4F7lsYwwFErRdkYS9z76PbeTHkfuq8DmRf9UG221ev43_UtyIMJesKbAZlcmg7ZVKSCP4P1ECLbHhbP3LOJ9_OIjD2DTH3mzub_taDcM22ajiw_2gSHjEkqM1Z8QJOuCEe6LsEtemYBvYM58f4qv0IizmN4t63ynuHsPF3JmKDpNFBhu0FnlAfpgK6YZ0Cs1ft3CimlFIQjickCwyOIn3ZtPyTrhV39F2WGtWltEoLnoHDIKg1Np6L_aG7jlpVMsTCqUG6yDpV1avlmwqDa0Xio97dnLSBLnqD2_6j-WCik0d1fLdcAd-RwZ_A5_1bqN3pKIu_O8EFAOcNyk1h72vaLguypcO8utmMN6TvSUZJZBFRw22ahEsrhlN8gEQQD3aBC57BAUciOViHyYUue7roqrmCvKXifgmV1oBByqXzr_gjmoGuPHGxqybYQ6vZgiL_SarOH8gI4whAu29luXfNHPS14xTc9uA_noBd7sU53Vg2z0jlVkjpKO1SKdcV4v1b9iz8RwJJJ1mAFWTHKXit3zUIRVlb1gZGNO7UBdmOcA6_XJPwjwg8RLsfE-21cakXfE6i9JtJVcHH4MLfJntELokOr_KDtaJNkRGvWIMRYRlhWwYV4XsF2C0qcEuC2PMxCCNyYSEGzE-QWwCT94cL88ChDA1HROPkvdM0bmao-mor6xPS6wZg-K8Z_pii2F52lu0yWpQT_WoY5fg9mkfufNeGA9yMERybIp_Au78Q7BtSml68OVqvSCjjQ61mNkojbdbAg1xVvm9WU_ftTckbQontswwP65jLubN_fg9zjeFGY1IqkBXWO5z_Pxusm2vGqMGXOg2a0HmN_iMAmYQOg-4frOQDHMHXBmf8BbBw=w1600-h1600?authuser=0',
+                alt_text='imagemap',
+                base_size=BaseSize(height=700, width=1200),
+                actions=[
+                    MessageImagemapAction(
+                        text='A10',
+                        area=ImagemapArea(
+                            x=230, y=140, width=600, height=150
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='A11',
+                        area=ImagemapArea(
+                            x=230, y=290, width=600, height=150
+                        )
+                    ),
+                    MessageImagemapAction(
+                        text='A12',
+                        area=ImagemapArea(
+                            x=230, y=500, width=600, height=150
+                        )
+                    )
+                ]
+            )
+            # line_bot_api.reply_message(event.reply_token,clinic_message)
+            line_bot_api.push_message(uid, sym_message)
+            return 0
 #-----------------------------------------------------------------------------            
         elif  user_message =='A2':
             s1='A2'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[A2:全身水腫/泡泡尿/尿量減少]。'+ line_mark +'建議看診科別:[腎臟內科]'
+            H1_sym_message='Your current symptom:\n[A2:Whole body edema / Bubbles in urine / Decreased urine output]。'+ line_mark +'Recommended clinic:[Nephrology]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號腎臟內科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1511,7 +1395,7 @@ def handle_message(event):
         elif  user_message =='A3':
             s1='A3'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[A3:容易緊張/流汗/失眠]。'+ line_mark +'建議看診科別:[內分泌科]'
+            H1_sym_message='Your current symptom:\n[A3:Easy to get nervous / Excessive sweating / Insomnia]。'+ line_mark +'Recommended clinic:[Endocrinology and Metabolism]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號內分泌科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1520,7 +1404,7 @@ def handle_message(event):
         elif  user_message =='A4':
             s1='A4'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[A4:失眠/焦慮/恐慌/生氣]。'+ line_mark +'建議看診科別:[精神科]'
+            H1_sym_message='Your current symptom:\n[A4:Insomnia / anxiety / depression / fear / anger]。'+ line_mark +'Recommended clinic:[Psychiatry]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號精神科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1529,7 +1413,7 @@ def handle_message(event):
         elif  user_message =='A5':
             s1='A5'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[A5:青春痘/皮膚黑斑/免疫系統疾病]。'+ line_mark +'建議看診科別:[皮膚科]'
+            H1_sym_message='Your current symptom:\n[A5:Acne / Dark Spots / Immune System Disorders]。'+ line_mark +'Recommended clinic:[Dermatology]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號皮膚科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1538,7 +1422,7 @@ def handle_message(event):
         elif  user_message =='A6':
             s1='A6'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[A6:皮膚傷口/皮膚癢/紅腫/緊繃]。'+ line_mark +'建議看診科別:[皮膚科]'
+            H1_sym_message='Your current symptom:\n[A6:Skin wound / itch / redness / tightness]。'+ line_mark +'Recommended clinic:[Dermatology]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號皮膚科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1547,7 +1431,7 @@ def handle_message(event):
         elif  user_message =='A7':
             s1='A7'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[A7:血壓高/暈倒]。'+ line_mark +'建議看診科別:[心臟內科]'
+            H1_sym_message='Your current symptom:\n[A7:High blood pressure / Fainting]。'+ line_mark +'Recommended clinic:[Cardiology]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號心臟內科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1556,7 +1440,7 @@ def handle_message(event):
         elif  user_message =='A8':
             s1='A8'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[A8:黃疸]。'+ line_mark +'建議看診科別:[肝膽胰內科]'
+            H1_sym_message='Your current symptom:\n[A8:Jaundice]。'+ line_mark +'Recommended clinic:[Hepatic-biliary-pancreatic Medicine]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號肝膽胰內科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1565,7 +1449,7 @@ def handle_message(event):
         elif  user_message =='A9':
             s1='A9'
             KMSH_UserDB_Con.set_s1(uid,s1)
-            H1_sym_message='您先前已選症狀:\n[A9:身體痠痛麻/無力/緊繃]。'+ line_mark +'建議看診科別:[復健科]'
+            H1_sym_message='Your current symptom:\n[A9:Body aches and numbness/ weakness / tightness]。'+ line_mark +'Recommended clinic:[Rehabilitation]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號復健科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1574,7 +1458,7 @@ def handle_message(event):
         elif  user_message =='A10':
             s2='A10'
             KMSH_UserDB_Con.set_s2(uid,s2)
-            H1_sym_message='您先前已選症狀:\n[A1:發燒]、\n[A10:胸痛悶/喘鳴聲/咳嗽有痰]。'+ line_mark +'建議看診科別:[胸腔內科]'
+            H1_sym_message='Your current symptom:\n[A1:fever]、\n[A10:Chest pain / wheezing / coughing with sputum]。'+ line_mark +'Recommended clinic:[Pulmonary Medicine]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號胸腔內科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1583,7 +1467,7 @@ def handle_message(event):
         elif  user_message =='A11':
             s2='A11'
             KMSH_UserDB_Con.set_s2(uid,s2)
-            H1_sym_message='您先前已選症狀:\n[A1:發燒]、\n[A11:頭痛/紅疹/肌肉痠痛/關節痛]。'+ line_mark +'建議看診科別:[感染內科]'
+            H1_sym_message='Your current symptom:\n[A1:fever]、\n[A11:Headache / rash / muscle aches / arthralgia]。'+ line_mark +'Recommended clinic:[Infectious Disease]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號胸腔內科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1592,7 +1476,7 @@ def handle_message(event):
         elif  user_message =='A12':
             s2='A12'
             KMSH_UserDB_Con.set_s2(uid,s2)
-            H1_sym_message='您先前已選症狀:\n[A1:發燒]、\n[A12:頭痛暈/耳鳴/鼻涕/喉嚨痛]。'+ line_mark +'建議看診科別:[耳鼻喉科]'
+            H1_sym_message='Your current symptom:\n[A1:fever]、\n[A12:Dizziness / tinnitus / running nose / sore throat]。'+ line_mark +'Recommended clinic:[ENT Dept.]'
             line_bot_api.reply_message(event.reply_token,TextSendMessage(H1_sym_message))
             rig_dept='掛號耳鼻喉科'
             Rig_Option.Ask(uid,rig_dept)
@@ -1805,20 +1689,20 @@ def handle_message(event):
             base_url='https://lh3.googleusercontent.com/fife/AAbDypBazBR0kg4Tel-CQRPRBA1_hhhNn2UVre-ZO4I7qG_LazITOAjR4kNF5tvmuFNZTA6M7ZDE_MLy7W8L9XT44Vr9jP5n59iB8xa5EQJ83hzLRUvLipqB_gbsQaE2YFv3lE50-stWQVB3Swg9j9u7g7HFoq6VnjFZwNZDdvEvYyL_iUCvxBbDtPxxEwa_oKWvA-AaWiOTh8AVQy5ahTLi8Jeu-iZOQGH6SUZb2qgdYT32Y9MiEhK6QvVAmm7FZVi610Rz0ApKAOUVKqS4u3t7WwpkDR8N-g5LPSTcixtEAwyusWv7DK3ERW7rooo1mqM1AGCYCwiug4kBoijH8VGAZ4XpcluChWneZ351l0-NoOpQDcBxpKft4n6IA62zBe6S0AjadCqFID4OR10YfaBBWdNFGdWsZ8Rlf3RjuOmM7bHlaiqdOhJGJ4SttqWC9k1F6SYhMVlvxt8culAJwTnEozZoM_Zx6bdM31icpHB-4YHWYHsKRfkLlokqFCV1yaiOc4WvmmX4_IjnyCQ-NtyIaU9CQwNzkt5k0Y9CNtXDfjq8vByXmwc-Zn9-dIhSqoGqazs5SuvWdE5zX4xELfq45sCGoSjK8MYvb1017pkxSEivvza0swcqe17CX86hYGfpcQNXdZa5uGT4_g5vbRsci-QCgX7HLlJekYdwQTiuhqh1aFpg4IZHi6pgJFZKlK5z8d8vKxc_K8IQR7DXdOF3vomMEiBoeMPbZ8zQfB2iTxhsFBQ10yChsBjlsk1PUMzqQi2OorloOqVgr3IhVgKIdLxcgqqC0oeY_ktHmcTC7TgoP8n_zOhH8vYlbeCD9nVoQfrdULtiYaqsn8CJkoSpyUG3mk1h7i0R-dxlAWJ0ojF-aIFeU9zpjzgrLoo_AIKgxwMonFSH1f_HmBN_y2gZnlU__WY92iZ5j5WdB-drkkFSlnkKAQdxHWyyfuaBlp18iTuRTnLD_MrJuirF3-hWgtcsJJMzPOceqt_Lhobxk2FuI_Ux0Ad8HrdJ-dyHndW0lm8qKwpKrhA4IjHmr6n9RtXWIY04kGCP5ASHtXH3zmRsbI5msCRLK-2w5XEBUHWBS78Hdbn5G_jxzgu-KZgE5hg19bTtA4m8otv0_h2oBBJELV7JAJEvAUh0RNVkwJe_vaCoFY2Mezjdj20-1NKITejzXWJjq2g3ItH2vToCzD8D-PobTDFvgfnH6cwCzzepjDbYbUCthiuE-4DLMmpu-y30a3NJfM49Uf2iiR435NCKqZ8l6Ek6zTYiC_mp1ucF9fLgVon5hA2i7IeX29jy-zd96hqyuIt5dTtp-ZBSmz7_JX-rxivHVl62nAsI6W6UC7XAnHNfSD4OYeDV=w1600-h1600?authuser=0',
             alt_text='imagemap',
             base_size=BaseSize(height=1040, width=1200),
-               actions=[
-                MessageImagemapAction (
+            actions=[
+                MessageImagemapAction(
                     text='Head Symptoms',
                     area=ImagemapArea(
                         x=0, y=0, width=520, height=320
                     )
                 ),
-                MessageImagemapAction (
+                MessageImagemapAction(
                     text='Neck Symptoms',
                     area=ImagemapArea(
                         x=0, y=320, width=520, height=260
                     )
                 ),
-                MessageImagemapAction (
+                MessageImagemapAction(
                     text='Symptoms of Limbs',
                     area=ImagemapArea(
                         x=0, y=580, width=520, height=460
@@ -1842,9 +1726,12 @@ def handle_message(event):
                         x=520, y=640, width=520, height=400
                     )
                 ),
-        
+
             ]
         )
+        # line_bot_api.push_message(uid, diagnosis_message)
+        line_bot_api.push_message(uid, imagemap_message)
+        return 0
         #line_bot_api.push_message(uid, diagnosis_message)
         line_bot_api.push_message(uid, imagemap_message)                                        
         return 0
@@ -9273,7 +9160,7 @@ def handle_message(event):
         #line_bot_api.push_message(uid, clinic_message)
         return 0
 ########################### 骨科 I  ###########################
-    elif user_message.find('掛號骨科A') != -1:
+    elif user_message.find('Orthopedics A') != -1:
         clinic_message = TemplateSendMessage(
             alt_text='掛號骨科I',
             template=CarouselTemplate(
@@ -9284,8 +9171,8 @@ def handle_message(event):
                         image_aspect_ratio='rectangle',
                         imageSize='contain',
                         thumbnail_image_url='https://lh3.googleusercontent.com/D5teVInniSM6-xB9-6iOjuQqb2BMeuVAn5OawCQWywjSmI_yK_EdSKbcuZtDpMXCbH1gRngWE2o-bWjI_2e9LXEBH7Qyy5NiSCDO5NE7VDXPaI5rFeni1jDYMsNhYOEfQaIHHaFNUw=w400',
-                        title='盧政昌醫師/骨科醫師群I-1/7',
-                        text='小港醫院骨科主任/主治醫師。[臨床專業]:一般骨科、 骨折創傷、 運動醫學、 關節鏡手術..',
+                        title='Dr. Lu Zhengchang-1/7',
+                        text='【Clinical specialty】：General orthopedics, sports medicine..',
                         actions=[
                             MessageTemplateAction(
                                 label='醫師簡介',
@@ -9441,7 +9328,7 @@ def handle_message(event):
         #line_bot_api.push_message(uid, clinic_message)
         return 0                    
 ########################### 骨科 I  ###########################
-    elif user_message.find('掛號骨科B') != -1:
+    elif user_message.find('Orthopedics B') != -1:
         clinic_message = TemplateSendMessage(
             alt_text='掛號骨科II',
             template=CarouselTemplate(
