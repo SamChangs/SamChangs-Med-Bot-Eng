@@ -608,7 +608,7 @@ def handle_message(event):
             )
         
             imagemap_message = ImagemapSendMessage(
-            base_url='https://lh3.googleusercontent.com/K8i-XYfunqUI_vPB1kM3piCg1G0oh3aOEMo34zOg3v0a1pUDqKfllfQiP1bIPCaWhmxb8J0sb3daOBnmjY-g7pyEqSOvqhXL9oSz3CzAiF_CLBNYCrFtNgbo6zSL1UUxylwStMWShg=w1040#',',
+            base_url='https://lh3.googleusercontent.com/K8i-XYfunqUI_vPB1kM3piCg1G0oh3aOEMo34zOg3v0a1pUDqKfllfQiP1bIPCaWhmxb8J0sb3daOBnmjY-g7pyEqSOvqhXL9oSz3CzAiF_CLBNYCrFtNgbo6zSL1UUxylwStMWShg=w1040#',
             alt_text='imagemap',
             base_size=BaseSize(height=1040, width=1200),
                 actions=[
