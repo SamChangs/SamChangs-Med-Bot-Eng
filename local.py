@@ -48,16 +48,16 @@ def Type_of_visit(address_type):
                                     ),
                     ),
                     ButtonComponent(action=PostbackAction(
-                                    label='Medicine Hospital',
-                                    display_text='Search Medicine Hospital',
-                                    data="action=search,{lan},{long},Medicine Hospital"
+                                    label='Medical center',
+                                    display_text='Search Medical center',
+                                    data="action=search,{lan},{long},Medical center"
                                         .format(lan=address_type[0], long=address_type[1])
                                     ),
                     ),
                     ButtonComponent(action=PostbackAction(
-                                    label='Pharmacy Hospital',
-                                    display_text='Search Pharmacy Hospital',
-                                    data="action=search,{lan},{long},Pharmacy Hospital"
+                                    label='Pharmacy',
+                                    display_text='Search Pharmacy',
+                                    data="action=search,{lan},{long},Pharmacy"
                                         .format(lan=address_type[0], long=address_type[1])
                                     ),
                     )
@@ -98,7 +98,7 @@ def Search_address(lat,long,address_type):
          db_type = clinic_hp_db
          db_type_name = "clinic_hp_db"
 
-    elif address_type == "Medicine Hospital":
+    elif address_type == "Medical center":
          name = "醫學"
          hs_Name = 'Name'
          address = "Address"
@@ -108,7 +108,7 @@ def Search_address(lat,long,address_type):
          db_type = medicine_hp_db
          db_type_name = "Medical Specialty"
 
-    elif address_type == "Pharmacy Hospital":
+    elif address_type == "Pharmacy":
          name = "藥局"
          hs_Name = 'Name'
          address = "Address"
