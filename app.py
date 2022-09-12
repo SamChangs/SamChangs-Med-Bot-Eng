@@ -608,8 +608,7 @@ def handle_message(event):
             )
         
             imagemap_message = ImagemapSendMessage(
-            base_url='https://lh3.googleusercontent.com/fife/AAbDypBazBR0kg4Tel-CQRPRBA1_hhhNn2UVre-ZO4I7qG_LazITOAjR4kNF5tvmuFNZTA6M7ZDE_MLy7W8L9XT44Vr9jP5n59iB8xa5EQJ83hzLRUvLipqB_gbsQaE2YFv3lE50-stWQVB3Swg9j9u7g7HFoq6VnjFZwNZDdvEvYyL_iUCvxBbDtPxxEwa_oKWvA-AaWiOTh8AVQy5ahTLi8Jeu-iZOQGH6SUZb2qgdYT32Y9MiEhK6QvVAmm7FZVi610Rz0ApKAOUVKqS4u3t7WwpkDR8N-g5LPSTcixtEAwyusWv7DK3ERW7rooo1mqM1AGCYCwiug4kBoijH8VGAZ4XpcluChWneZ351l0-NoOpQDcBxpKft4n6IA62zBe6S0AjadCqFID4OR10YfaBBWdNFGdWsZ8Rlf3RjuOmM7bHlaiqdOhJGJ4SttqWC9k1F6SYhMVlvxt8culAJwTnEozZoM_Zx6bdM31icpHB-4YHWYHsKRfkLlokqFCV1yaiOc4WvmmX4_IjnyCQ-NtyIaU9CQwNzkt5k0Y9CNtXDfjq8vByXmwc-Zn9-dIhSqoGqazs5SuvWdE5zX4xELfq45sCGoSjK8MYvb1017pkxSEivvza0swcqe17CX86hYGfpcQNXdZa5uGT4_g5vbRsci-QCgX7HLlJekYdwQTiuhqh1aFpg4IZHi6pgJFZKlK5z8d8vKxc_K8IQR7DXdOF3vomMEiBoeMPbZ8zQfB2iTxhsFBQ10yChsBjlsk1PUMzqQi2OorloOqVgr3IhVgKIdLxcgqqC0oeY_ktHmcTC7TgoP8n_zOhH8vYlbeCD9nVoQfrdULtiYaqsn8CJkoSpyUG3mk1h7i0R-dxlAWJ0ojF-aIFeU9zpjzgrLoo_AIKgxwMonFSH1f_HmBN_y2gZnlU__WY92iZ5j5WdB-drkkFSlnkKAQdxHWyyfuaBlp18iTuRTnLD_MrJuirF3-hWgtcsJJMzPOceqt_Lhobxk2FuI_Ux0Ad8HrdJ-dyHndW0lm8qKwpKrhA4IjHmr6n9RtXWIY04kGCP5ASHtXH3zmRsbI5msCRLK-2w5XEBUHWBS78Hdbn5G_jxzgu-KZgE5hg19bTtA4m8otv0_h2oBBJELV7JAJEvAUh0RNVkwJe_vaCoFY2Mezjdj20-1NKITejzXWJjq2g3ItH2vToCzD8D-PobTDFvgfnH6cwCzzepjDbYbUCthiuE-4DLMmpu-y30a3NJfM49Uf2iiR435NCKqZ8l6Ek6zTYiC_mp1ucF9fLgVon5hA2i7IeX29jy-zd96hqyuIt5dTtp-ZBSmz7_JX-rxivHVl62nAsI6W6UC7XAnHNfSD4OYeDV=w1600-h1600?authuser=0',
-            alt_text='imagemap',
+            base_url='https://lh3.googleusercontent.com/d/1ve05vp5guSg1qa-QLTJhZMVkYq7d5Dye=w1600-h1600?authuser=0',
             base_size=BaseSize(height=1040, width=1200),
                 actions=[
                     MessageImagemapAction(
@@ -1574,56 +1573,7 @@ def handle_message(event):
         Response_info='You have left the function of [diagnosis advice]! You can use other functions!'
         line_bot_api.reply_message(event.reply_token,TextSendMessage(Response_info))    
     # test template
-    elif user_message.find('test') !=-1:
-        lang ='中'
-        KMSH_UserDB_Con.set_trmode_d(uid,lang)
-        imagemap_message = ImagemapSendMessage(
-            base_url='https://lh3.googleusercontent.com/fife/AAbDypBdwSzPAUuHfyPdv15h1Yw443oyAEBhc15P6Bibe58dF5ZlQlA5kiSQ2OujuTysX6NdThqVMuRU5GvdnSpxWnIZVJbrIPqFW1_BXwMCR346-FOO6IgnhlZwtl-4gcXQq81jz1-o9M2oS6iKVKLwvWH7BWm7fPcTZGTbrYLjoyz9wsoQnWd6T5hFCxo35JqoFb-w4zoMJ0yMaIvN36QXsKALgHUKJv-AggX1gaOS67DWLfnPUIJrILi3UcpgQIFcHAjE0WTCPRSLVAOpPwVfGfw_tM5lPtCczSzX7-7W5Xabj_I4gQ7pw_MrAq3BjkgSl63GErzTvPBu15n6FYeuJXl4pM2thR-qVaq_a7ZEHPH2PGFQcMAFrhYPUTxp914wZqVj4KkitADRjbD0fU8WBblyj03NOzx8ekpOkeCiVKsEAiHXxaHJPjJcebMdlC9BHLy9kYbz107QvT12ZMMCXOuvJRAE2CrLJMyb2o9Ps2hfP8f7nAxB9E5qjwnfUi0AcLHXT_5dSmRg2YzRDIy9pIcc8xH9Lgd03ucMAGaQ0KyTHZ1ewTZkzV0OLo_Z6n7hUm915EbNxbz8f39v7aSGrVPX7lfQJt50Cm1p7WFwBoaJdpvkoGNkaZwIGx2O9C5sdQ7Ye7csh_Ubfqlm_DJn_1mWX02pcyfY5IfQzHk6BuwPqlMj3Jv7HedV9AvdQbswLTn-qfXsa4CSa7u5U1ZfxxAptcDyQHJkxPQQ5uocgLKaqFde0u4L_bKtqXqHcai0_eGDICeHO5YQEoG6WM4-rseWCLanrMpyvBl0zTJrUH8Hyf4VpTkrvcMhQWSBmmPZ0KK1VJIi8uEjSMoRgjnMWATMnMfgHJT1LYyuAtjTZdw7Hl8Z_zzh_2B0b-h5lqpld7YzwRLP3_alYo6_Z8LVB6gEW0c3RXCZlq_IQ9kPX5m8RR9aFuaVNg61x-JTdIsb5v-nyVacPXgOdBv4w2mrv-UjzrwXpwT9fd8ox3C0xp_kctMj_jgd2GSx3VosE7qRCCRPq1dlQUsu4djbACa1y2XqtPAuBqFZ4ZvPEPzWXB_akd5gdkzlJf4AqGc2gs6zuV5dFtA8XCCDRstAYmp0VK6CRp7Mj3CMISB_F5D4EqzLvIe3780vF6u5-FjNgG4h6qTGgRVzVVrReIJRaiQVparY4B0Ee6qx4YzqUtBcclJY5jIvpCpueEHJKWRSwgw3m_81z83gwGRTx_0Hdm-cKs-NMoR_1ZD5X8wbMDzApNDTfwGO61dMb7fQTgDcuQYEzFkeSHFXjEjmrSkP8c9SyJO4Jecgb3wMZUxIBNBcEMVRpOtb3w_B-D-fzyEJULDeQEf2PXVFoLK4AkJQ=w1600-h1600?authuser=0',
-            alt_text='imagemap',
-            base_size=BaseSize(height=1040, width=1200),
-            actions=[
-                MessageImagemapAction(
-                    text='Head Symptoms',
-                    area=ImagemapArea(
-                        x=0, y=0, width=520, height=320
-                    )
-                ),
-                MessageImagemapAction(
-                    text='Neck Symptoms',
-                    area=ImagemapArea(
-                        x=0, y=320, width=520, height=260
-                    )
-                ),
-                MessageImagemapAction(
-                    text='Symptoms of Limbs',
-                    area=ImagemapArea(
-                        x=0, y=580, width=520, height=460
-                    )
-                ),
-                MessageImagemapAction(
-                    text='General Symptoms',
-                    area=ImagemapArea(
-                        x=520, y=0, width=520, height=320
-                    )
-                ),
-                MessageImagemapAction(
-                    text='Upper Abdomen Symptoms',
-                    area=ImagemapArea(
-                        x=520, y=320, width=520, height=320
-                    )
-                ),
-                MessageImagemapAction(
-                    text='Lower Abdomen Symptoms',
-                    area=ImagemapArea(
-                        x=520, y=640, width=520, height=400
-                    )
-                ),
 
-            ]
-        )
-        # line_bot_api.push_message(uid, diagnosis_message)
-        line_bot_api.push_message(uid, imagemap_message)
-        return 0
     elif user_message.find('Medical Department Recommendation') !=-1:
         lang ='中'
         KMSH_UserDB_Con.set_trmode_d(uid,lang)
@@ -1686,7 +1636,7 @@ def handle_message(event):
 
 
         imagemap_message = ImagemapSendMessage(
-            base_url='https://lh3.googleusercontent.com/fife/AAbDypBazBR0kg4Tel-CQRPRBA1_hhhNn2UVre-ZO4I7qG_LazITOAjR4kNF5tvmuFNZTA6M7ZDE_MLy7W8L9XT44Vr9jP5n59iB8xa5EQJ83hzLRUvLipqB_gbsQaE2YFv3lE50-stWQVB3Swg9j9u7g7HFoq6VnjFZwNZDdvEvYyL_iUCvxBbDtPxxEwa_oKWvA-AaWiOTh8AVQy5ahTLi8Jeu-iZOQGH6SUZb2qgdYT32Y9MiEhK6QvVAmm7FZVi610Rz0ApKAOUVKqS4u3t7WwpkDR8N-g5LPSTcixtEAwyusWv7DK3ERW7rooo1mqM1AGCYCwiug4kBoijH8VGAZ4XpcluChWneZ351l0-NoOpQDcBxpKft4n6IA62zBe6S0AjadCqFID4OR10YfaBBWdNFGdWsZ8Rlf3RjuOmM7bHlaiqdOhJGJ4SttqWC9k1F6SYhMVlvxt8culAJwTnEozZoM_Zx6bdM31icpHB-4YHWYHsKRfkLlokqFCV1yaiOc4WvmmX4_IjnyCQ-NtyIaU9CQwNzkt5k0Y9CNtXDfjq8vByXmwc-Zn9-dIhSqoGqazs5SuvWdE5zX4xELfq45sCGoSjK8MYvb1017pkxSEivvza0swcqe17CX86hYGfpcQNXdZa5uGT4_g5vbRsci-QCgX7HLlJekYdwQTiuhqh1aFpg4IZHi6pgJFZKlK5z8d8vKxc_K8IQR7DXdOF3vomMEiBoeMPbZ8zQfB2iTxhsFBQ10yChsBjlsk1PUMzqQi2OorloOqVgr3IhVgKIdLxcgqqC0oeY_ktHmcTC7TgoP8n_zOhH8vYlbeCD9nVoQfrdULtiYaqsn8CJkoSpyUG3mk1h7i0R-dxlAWJ0ojF-aIFeU9zpjzgrLoo_AIKgxwMonFSH1f_HmBN_y2gZnlU__WY92iZ5j5WdB-drkkFSlnkKAQdxHWyyfuaBlp18iTuRTnLD_MrJuirF3-hWgtcsJJMzPOceqt_Lhobxk2FuI_Ux0Ad8HrdJ-dyHndW0lm8qKwpKrhA4IjHmr6n9RtXWIY04kGCP5ASHtXH3zmRsbI5msCRLK-2w5XEBUHWBS78Hdbn5G_jxzgu-KZgE5hg19bTtA4m8otv0_h2oBBJELV7JAJEvAUh0RNVkwJe_vaCoFY2Mezjdj20-1NKITejzXWJjq2g3ItH2vToCzD8D-PobTDFvgfnH6cwCzzepjDbYbUCthiuE-4DLMmpu-y30a3NJfM49Uf2iiR435NCKqZ8l6Ek6zTYiC_mp1ucF9fLgVon5hA2i7IeX29jy-zd96hqyuIt5dTtp-ZBSmz7_JX-rxivHVl62nAsI6W6UC7XAnHNfSD4OYeDV=w1600-h1600?authuser=0',
+            base_url='https://lh3.googleusercontent.com/d/1ve05vp5guSg1qa-QLTJhZMVkYq7d5Dye=w1600-h1600?authuser=0',
             alt_text='imagemap',
             base_size=BaseSize(height=1040, width=1200),
             actions=[
