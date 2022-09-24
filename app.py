@@ -608,7 +608,6 @@ def handle_message(event):
             )
         
             imagemap_message = ImagemapSendMessage(
-            base_url='https://lh3.googleusercontent.com/d/1ve05vp5guSg1qa-QLTJhZMVkYq7d5Dye=w1600-h1600?authuser=0',
             base_size=BaseSize(height=1040, width=1200),
                 actions=[
                     MessageImagemapAction(
